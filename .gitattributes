@@ -1,0 +1,5 @@
+# Force LF in the repository. Without this the JSON is stored CRLF from
+# Windows but written LF by the Linux CI runner, so the daily workflow would
+# see a diff every run and commit noise even when no listing changed.
+* text=auto eol=lf
+*.bat text eol=crlf

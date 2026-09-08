@@ -1,0 +1,1370 @@
+<meta charset="utf-8">
+<title>Exam Atlas for a CSE Graduate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#FBFAF7;--surface:#FFFFFF;--surface-2:#F4F2ED;--surface-3:#EDEAE3;
+  --ink:#1B2A4A;--ink-soft:#3D4A66;--muted:#6E7385;
+  --rule:#DCD8CF;--rule-strong:#C3BDB1;
+  --stamp:#B3341F;--stamp-bg:#FBEDE9;
+  --seal:#2F6B4F;--seal-bg:#E9F2EC;
+  --ochre:#9A6A15;--ochre-bg:#FBF1DE;
+  --shadow:0 1px 2px rgba(27,42,74,.06),0 8px 24px -12px rgba(27,42,74,.18);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#14171F;--surface:#1C2029;--surface-2:#232833;--surface-3:#2B313D;
+  --ink:#E9E7E1;--ink-soft:#C3C6CF;--muted:#949AA8;
+  --rule:#2E3440;--rule-strong:#3E4553;
+  --stamp:#E5806B;--stamp-bg:#2E1D1A;
+  --seal:#7FBF9C;--seal-bg:#17251E;
+  --ochre:#D9AB5B;--ochre-bg:#2A2318;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+}}
+:root[data-theme="dark"]{
+  --paper:#14171F;--surface:#1C2029;--surface-2:#232833;--surface-3:#2B313D;
+  --ink:#E9E7E1;--ink-soft:#C3C6CF;--muted:#949AA8;
+  --rule:#2E3440;--rule-strong:#3E4553;
+  --stamp:#E5806B;--stamp-bg:#2E1D1A;
+  --seal:#7FBF9C;--seal-bg:#17251E;
+  --ochre:#D9AB5B;--ochre-bg:#2A2318;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"Source Sans 3","Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px 80px}
+h1,h2,h3,h4{font-family:"Zilla Slab",Georgia,serif;text-wrap:balance}
+a{color:var(--ink);text-decoration-color:var(--rule-strong);text-underline-offset:2px}
+a:hover{text-decoration-color:var(--stamp)}
+:focus-visible{outline:2px solid var(--stamp);outline-offset:2px;border-radius:2px}
+
+/* masthead */
+header.mast{border-bottom:2px solid var(--ink);padding:36px 0 18px;margin-bottom:22px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 18px}
+.eyebrow b{color:var(--stamp)}
+h1{font-size:clamp(1.9rem,4.6vw,3rem);font-weight:700;line-height:1.06;letter-spacing:-.015em;margin:.3em 0 .2em}
+.standfirst{color:var(--ink-soft);max-width:62ch;margin:0;font-size:1.05rem}
+
+/* deadline strip */
+.strip{display:flex;flex-wrap:wrap;gap:2px;background:var(--rule);border:1px solid var(--rule);border-top:3px solid var(--stamp);margin:20px 0 26px}
+.strip .cell{background:var(--surface);padding:12px 16px;flex:1 1 240px}
+.strip .n{font-family:"IBM Plex Mono",monospace;font-size:1.5rem;font-weight:600;color:var(--stamp);font-variant-numeric:tabular-nums;line-height:1}
+.strip .lb{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.strip .nm{font-weight:600;margin-top:6px;font-size:.95rem}
+
+/* controls */
+.controls{position:sticky;top:0;z-index:20;background:var(--paper);padding:12px 0 10px;border-bottom:1px solid var(--rule);margin-bottom:18px}
+.searchrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#q{flex:1 1 260px;min-width:0;padding:9px 12px;font-family:inherit;font-size:.95rem;background:var(--surface);color:var(--ink);border:1px solid var(--rule-strong);border-radius:2px}
+#q::placeholder{color:var(--muted)}
+.count{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.sortlab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+#sort{padding:8px 10px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;background:var(--surface);color:var(--ink);border:1px solid var(--rule-strong);border-radius:2px}
+.tally{margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);font-variant-numeric:tabular-nums;display:flex;flex-wrap:wrap;gap:4px 16px}
+.tally b{color:var(--stamp);font-weight:600}
+.tally span.q{color:var(--muted)}
+
+/* metric columns in the collapsed row */
+.metrics{display:flex;gap:0;border-left:1px solid var(--rule);align-self:stretch}
+.met{padding:0 14px;min-width:96px;border-right:1px solid var(--rule);display:flex;flex-direction:column;justify-content:center}
+.met:last-child{border-right:0}
+.met .mv{font-family:"IBM Plex Mono",monospace;font-size:1.02rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.15;color:var(--ink)}
+.met .mv.none{color:var(--muted);font-weight:400}
+.met .mv.stale{color:var(--ink-soft)}
+.met .ml{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.met .sub{font-family:"IBM Plex Mono",monospace;font-size:9.5px;color:var(--seal);margin-top:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--rule-strong);background:var(--surface);color:var(--ink-soft);cursor:pointer;border-radius:2px;font-weight:500}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip:hover{border-color:var(--stamp)}
+
+/* cards */
+.list{display:flex;flex-direction:column;gap:2px;background:var(--rule);border:1px solid var(--rule)}
+.card{background:var(--surface)}
+.card.open{background:var(--surface)}
+.head{display:grid;grid-template-columns:auto 1fr auto auto;gap:0 14px;align-items:center;padding:15px 18px;cursor:pointer;width:100%;text-align:left;border:0;background:none;color:inherit;font:inherit}
+.head:hover{background:var(--surface-2)}
+.tick{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;padding-top:2px}
+.t-p{color:var(--seal)}.t-s{color:var(--ochre)}.t-u{color:var(--muted)}
+.head h3{margin:0;font-size:1.06rem;font-weight:600;line-height:1.25}
+.head .org{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.head .facts{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:7px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.head .facts b{color:var(--ink);font-weight:600}
+.rt{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.caret{font-family:"IBM Plex Mono",monospace;color:var(--muted);font-size:13px}
+.pill{display:inline-block;padding:2px 8px;border-radius:2px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;white-space:nowrap}
+.p-go{background:var(--seal-bg);color:var(--seal)}
+.p-cond{background:var(--ochre-bg);color:var(--ochre)}
+.p-no{background:var(--stamp-bg);color:var(--stamp)}
+.p-open{background:var(--stamp);color:#fff}
+.p-gap{background:var(--surface-3);color:var(--muted);border:1px dashed var(--rule-strong)}
+.card[data-gap="1"]{background:repeating-linear-gradient(135deg,var(--surface),var(--surface) 14px,var(--surface-2) 14px,var(--surface-2) 28px)}
+.card[data-gap="1"] .head:hover{background:var(--surface-2)}
+.card[data-gap="1"] h3{color:var(--ink-soft)}
+
+.body{display:none;padding:0 18px 20px;border-top:1px solid var(--rule)}
+.card.open .body{display:block}
+.card.open .caret{transform:rotate(90deg)}
+.caret{display:inline-block;transition:transform .15s}
+@media (prefers-reduced-motion:reduce){.caret{transition:none}}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:16px}
+.blk h4{margin:0 0 6px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--stamp);font-weight:600;border-bottom:1px solid var(--rule);padding-bottom:5px}
+.blk p{margin:0 0 8px;font-size:.93rem;color:var(--ink-soft)}
+.blk ul{margin:0;padding-left:1.1em;font-size:.92rem;color:var(--ink-soft)}
+.blk li{margin-bottom:4px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:.92rem}
+.kv dt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.kv dd{margin:0;color:var(--ink-soft)}
+.kv dd b{color:var(--ink)}
+
+.tw{overflow-x:auto;border:1px solid var(--rule);margin-top:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:.88rem}
+th,td{padding:7px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+thead th{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:500;white-space:nowrap;border-bottom:1px solid var(--rule-strong);background:var(--surface-2)}
+tbody tr:last-child td{border-bottom:0}
+td.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-size:.83rem;white-space:nowrap}
+.syl{font-size:.9rem;color:var(--ink-soft)}
+.syl b{color:var(--ink);font-weight:600}
+.syl div{margin-bottom:7px}
+
+.note{border-left:3px solid var(--rule-strong);padding:2px 0 2px 14px;margin:14px 0;color:var(--ink-soft);font-size:.92rem}
+.note.warn{border-left-color:var(--stamp)}
+.note b{color:var(--ink)}
+
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;background:var(--rule);border:1px solid var(--rule);margin:16px 0 24px}
+.legend div{background:var(--surface);padding:11px 14px;font-size:.88rem;color:var(--ink-soft)}
+.legend b{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;color:var(--ink)}
+
+section.blockpad{margin:44px 0 0}
+section.blockpad>h2{font-size:1.55rem;font-weight:600;margin:0 0 6px;padding-bottom:8px;border-bottom:1px solid var(--rule-strong)}
+.sec-note{color:var(--muted);font-size:.93rem;margin:0 0 14px;max-width:70ch}
+.empty{padding:40px 18px;text-align:center;color:var(--muted);background:var(--surface)}
+/* live scraped listings */
+.livewrap{margin:0 0 30px}
+.livehead{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--rule-strong);padding-bottom:8px;margin-bottom:12px}
+.livehead h2{border:0;padding:0;margin:0;font-size:1.5rem;display:flex;align-items:center;gap:10px}
+.livehead .sec-note{margin:4px 0 0}
+.livectl{display:flex;gap:6px}
+#liveList{border:1px solid var(--rule);background:var(--surface)}
+.lrow{display:grid;grid-template-columns:auto 1fr auto;gap:0 14px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--rule)}
+.lrow:last-child{border-bottom:0}
+.lrow:hover{background:var(--surface-2)}
+.lvac{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-size:.95rem;font-weight:600;text-align:right;min-width:64px;color:var(--ink)}
+.lvac.none{color:var(--muted);font-weight:400}
+.lrow a{font-size:.95rem;font-weight:600;display:block}
+.ltags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.ltag{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.07em;text-transform:uppercase;padding:1px 6px;border:1px solid var(--rule-strong);color:var(--muted);border-radius:2px}
+.ltag.cse{border-color:var(--seal);color:var(--seal)}
+.ltag.rajasthan{border-color:var(--stamp);color:var(--stamp)}
+.lnew{background:var(--stamp);color:#fff;border-color:var(--stamp)}
+.lempty{padding:26px 16px;text-align:center;color:var(--muted)}
+@media (max-width:620px){.lrow{grid-template-columns:1fr auto}.lvac{text-align:left;grid-row:2;grid-column:1}}
+
+.cov{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--stamp);padding:18px 22px;box-shadow:var(--shadow)}
+.cov p{max-width:74ch;font-size:.95rem;color:var(--ink-soft)}
+.cov p:last-child{margin-bottom:0}
+.cov b{color:var(--ink)}
+footer{margin-top:56px;padding-top:18px;border-top:2px solid var(--ink);font-size:.86rem;color:var(--muted)}
+@media (max-width:900px){
+  .head{grid-template-columns:auto 1fr auto;align-items:start}
+  .metrics{grid-column:2/-1;border-left:0;border-top:1px solid var(--rule);margin-top:10px;padding-top:10px}
+  .met{padding-left:0;min-width:80px}
+  .met:first-child{padding-left:0}
+}
+@media (max-width:620px){
+  .head{grid-template-columns:auto 1fr;gap:0 10px}
+  .rt{grid-column:2;flex-direction:row;align-items:center;margin-top:8px;flex-wrap:wrap}
+  .metrics{grid-column:2}
+  .met{min-width:0;flex:1 1 76px;padding-right:8px}
+}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <div class="eyebrow">
+    <span>Compiled 6 September 2026</span>
+    <span>23 · Male · UR · B.Tech CSE · Jaipur</span>
+    <span><b id="openct">2 open now</b></span>
+  </div>
+  <h1>Exam Atlas for a CSE Graduate</h1>
+  <p class="standfirst">Every route found, with vacancies, dates, paper pattern, syllabus, candidate volumes and which post lands at which rank. Search it, filter it, open any row.</p>
+</header>
+
+<div class="strip" id="strip"></div>
+
+<section id="live" class="livewrap">
+  <div class="livehead">
+    <div>
+      <h2>Live listings <span class="pill p-gap" id="liveState">loading</span></h2>
+      <p class="sec-note" id="liveMeta">Scraped daily from sarkariresult.com.cm.</p>
+    </div>
+    <div class="livectl">
+      <button class="chip" id="liveScope" aria-pressed="true" data-scope="relevant">Relevant to me</button>
+      <button class="chip" id="liveNew" aria-pressed="false">New only</button>
+    </div>
+  </div>
+  <div class="note warn" style="margin-top:0"><b>Unverified leads, not facts.</b> The source is an ad-supported aggregator that states on its own pages it is <b>not associated with official or government websites</b>, and it sits on a <code>.com.cm</code> lookalike domain. Titles and post counts here are a <b>tip-off to go and check the issuing body's own notification</b> — never a basis for paying a fee. Nothing in this section carries the ◆/◇ confidence of the researched rows below.</div>
+  <div id="liveList"></div>
+</section>
+
+<div class="legend">
+  <div><b>◆ Primary</b>Read from the official site or notification PDF this session.</div>
+  <div><b>◇ Corroborated</b>Several independent sources agreed. Confirm before you pay a fee.</div>
+  <div><b>○ Single / knowledge</b>One aggregator, or stable exam structure I know but did not re-verify. A lead, not a fact.</div>
+  <div><b>° after a vacancy</b>Figure is from a <b>past cycle</b> with no live advertisement — historical reference, not an open count. Excluded from the "current-cycle" tally.</div>
+  <div><b>Basic pay</b>The 7th CPC pay-matrix <b>entry cell</b> for that post's level, or the figure named in the notification. <b>Never in-hand</b> — gross runs far higher, in-hand lower.</div>
+  <div><b>— in a column</b>No published figure found. Sorted last, never guessed.</div>
+</div>
+
+<div class="controls">
+  <div class="searchrow">
+    <input id="q" type="search" placeholder="Search exam, organisation, post — try &quot;IT officer&quot;, &quot;Rajasthan&quot;, &quot;GATE&quot;" aria-label="Search exams">
+    <label class="sortlab" for="sort">Sort</label>
+    <select id="sort" aria-label="Sort routes by">
+      <option value="default">Curated order</option>
+      <option value="vac">Most vacancies</option>
+      <option value="pay">Highest basic pay</option>
+      <option value="date">Soonest date</option>
+      <option value="act">Soonest I can apply</option>
+      <option value="elig">Eligibility</option>
+      <option value="sector">Sector</option>
+      <option value="name">Name A–Z</option>
+    </select>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="tally" id="tally"></div>
+  <div class="chips" id="chips"></div>
+</div>
+
+<div class="list" id="list"></div>
+
+<section class="blockpad" id="coverage">
+  <h2>Coverage statement</h2>
+  <p class="sec-note">The scope of this research, stated in full rather than implied by what happens to be present. Every claim in the atlas should be read against this.</p>
+
+  <div class="cov">
+    <p>You asked for every sector. This reached about <b>five of sixteen</b> with real verification. The rest deserves to be named rather than quietly padded with plausible-sounding rows.</p>
+
+    <p><b>Not researched at all:</b> Railways in full (RRB NTPC, JE, ALP, Technician, Section Controller, RPF SI, DMRC/JMRC) · insurance beyond a single NIACL page (LIC AAO, NICL, UIIC, OICL, GIC) · postal and telecom (India Post, DoT JTO, BSNL) · teaching (CTET, REET, KVS, NVS, DSSSB) · courts and eCourts technical posts · municipal and development-authority roles including JDA Jaipur · central-ministry direct recruitments · every state PSC except Rajasthan · the whole overlooked-bodies list — EPFO, ESIC, BIS, UIDAI, AAI, NTRO, CERT-In, FSSAI, TRAI, Election Commission, NHAI.</p>
+
+    <p><b>Also unverified:</b> most of the PSU list (only the GATE question was touched, thinly) · NIC, NIELIT, C-DAC, C-DOT, CSIR, IGCAR, NPCIL · SSC exams other than CGL · Navy and Air Force entries beyond AFCAT's age rules · Intelligence Bureau, NIA, CBI direct recruitment.</p>
+
+    <p><b>On the comparative sections you asked for:</b> salary figures here are thin and mostly single-sourced. Nothing was verified on in-hand pay, allowances, pension, promotion timelines or transfer patterns. Applicant-to-vacancy ratios and cutoffs weren't gathered beyond SSC CGL's UR figures. So the difficulty ordering, work-life-balance and job-security rankings, and tier placements are my judgment applied to the verified facts — reasoned, but not research findings, and I haven't dressed them up as such.</p>
+
+    <p>The session's web-search budget is exhausted (107 agents used all 200 calls), so I couldn't close those gaps today. <b>Railways and insurance alone would add more vacancies than everything in Tier 1 combined</b> — worth a second scoped run.</p>
+  </div>
+
+  <h3 style="margin-top:26px">Second pass — what the gap list actually yielded</h3>
+  <p class="sec-note">Web search stayed exhausted, but direct page fetches still worked, so the sectors named above were attacked one official site at a time. Partial success, reported exactly:</p>
+  <div class="tw"><table><thead><tr><th>Body</th><th>Outcome</th><th>What it changed</th></tr></thead><tbody>
+    <tr><td class="mono">aai.aero</td><td><b>Read</b></td><td><b>The significant find.</b> Advt 09/2025/CHQ — <b>976 Junior Executive posts recruited on GATE 2023/24/25 scores</b>; Advt 02/2025 — 309 Air Traffic Control posts; Advt 01/2025 — 83 posts. Electronics/IT named among disciplines. Promoted out of the gap list into its own entry</td></tr>
+    <tr><td class="mono">licindia.in</td><td><b>Read</b></td><td>Confirmed a live <b>"AAO Generalists / Specialists / Assistant Engineers 2025"</b> notification — the specialist and engineering streams genuinely exist. Counts and dates unreadable</td></tr>
+    <tr><td class="mono">hcraj.nic.in</td><td><b>Read</b></td><td>Confirmed the <b>Rajasthan High Court recruits "System Assistant"</b> — a local, technical, non-law post. Vindicates the courts row</td></tr>
+    <tr><td class="mono">dsssb.delhi.gov.in</td><td>Partial</td><td>Live <b>Advertisement No. 03/2026</b> exists; post list not readable from the homepage</td></tr>
+    <tr><td class="mono">rrbapply.gov.in</td><td>Failed</td><td>Served an empty JavaScript shell — no notification data in the HTML</td></tr>
+    <tr><td class="mono">epfo.gov.in</td><td>Failed</td><td>epfindia.gov.in redirects here; recruitment page returns <b>404</b></td></tr>
+    <tr><td class="mono">esic.gov.in</td><td>Failed</td><td>TLS certificate could not be verified</td></tr>
+    <tr><td class="mono">uidai.gov.in</td><td>Failed</td><td>Careers page returns <b>404</b></td></tr>
+    <tr><td class="mono">nielit.gov.in</td><td>Failed</td><td>TLS certificate could not be verified — this one matters, it is the NIC Scientist B route</td></tr>
+    <tr><td class="mono">bis.gov.in</td><td>Failed</td><td>Careers page served without its advertisement list</td></tr>
+  </tbody></table></div>
+  <p class="sec-note" style="margin-top:10px">Six of ten failed for <b>technical reasons — 404s, dead TLS certificates, JavaScript-only pages</b> — not because those bodies have nothing running. That distinction matters: do not read a failed row as "no vacancies". Without web search I could not locate the deeper working URLs that would get past these front pages.</p>
+
+  <h3 style="margin-top:26px">How the remaining gap is represented here</h3>
+  <p class="sec-note">Rather than leave those sectors out, each is catalogued above as a <span class="pill p-gap">Not researched</span> row on a hatched background — filter to them with the <b>Not researched</b> chip. Those rows carry what I know as background at low confidence, plus the exact page to verify against. <b>Nothing in them is a 2026 finding.</b> Use the <b>Verified</b> chip to see only what was actually checked.</p>
+
+  <div class="note warn"><b>Candidate volumes are the weakest column in the atlas.</b> Only UPSC CSE 2026 has a figure verified this session (≈8.2 lakh applied, ≈5.49 lakh appeared, 13,343 cleared Prelims). Every other applicant number is an order-of-magnitude estimate from typical recent cycles, tagged <i>estimate</i>. Do not quote them.</div>
+  <div class="note"><b>Rank-to-post tables are indicative, not rules.</b> Allocation shifts every year with vacancy mix, category, cadre preference and reserve lists. The ordering is stable; the exact numbers are not. Treat them as "roughly where this post sits", never as a target score.</div>
+  <div class="note"><b>If a follow-up run happens, the order should be:</b> the MeitY cluster (NIC, NIELIT, C-DAC, CERT-In) because it is the densest concentration of genuinely CSE-native government work · then RRB JE (IT), the one Junior Engineer family that admits Computer Science · then the PSU discipline tables · then Railways NTPC and the insurance block for raw vacancy volume · then court technical posts and the Rajasthan High Court, which are local and almost uncontested.</div>
+</section>
+
+<footer>
+  <p>Primary sources read this session: gate2027.iitm.ac.in (dates, paper pattern, official CS syllabus PDF), isro.gov.in careers, ssc.gov.in CGLE 2025 allocation PDF, rpsc.rajasthan.gov.in and rssb.rajasthan.gov.in advertisement listings, drdo.gov.in CEPTAM-11 corrigendum, gate2026.iitg.ac.in, joinindiancoastguard.cdac.in, upsc.gov.in Annual Calendars 2026 &amp; 2027. upsc.gov.in blocks automated fetch, so UPSC facts lean on convergent secondary reporting.</p>
+  <p><strong>A notification PDF always overrides a summary — including this one.</strong> Verify before you pay any fee.</p>
+</footer>
+</div>
+
+<script>
+const TODAY = new Date();
+const EXAMS = [
+/* ============ OPEN NOW ============ */
+{
+ id:'gate27', name:'GATE 2027', org:'IIT Madras', sector:['Gateway','PSU/Science'], src:'p',
+ verdict:'go', status:'open', closes:'2026-09-27',
+ tag:'The single highest-leverage form available to you today',
+ facts:{'Closes':'27 Sep 2026 (late fee 5 Oct)','Exam':'6–7, 13–14, 20–21 Feb 2027','Paper':'CS'},
+ kv:[['Portal','gate2027.iitm.ac.in — GOAPS'],['Registration opened','2 September 2026'],['Admit card','4 January 2027'],['Result','19 March 2027'],['Age limit','None'],['Degree','B.Tech / B.E. — final-year students eligible'],['Note','<b>DigiLocker registration is mandatory</b> for Indian nationals'],['Score validity','3 years']],
+ why:'Not a job. A score that gates BARC OCES/DGFS 2027, ISRO GATE-route drives, and the PSUs that admit CS/IT at all. Miss it and a large block of this atlas goes dark until late 2027.',
+ applicants:{n:'≈1.7–2 lakh sit the CS paper; ≈6.5–7 lakh across all 30 papers', src:'u'},
+ pattern:{src:'p', rows:[
+   ['Mode','Computer Based Test, English','—','—'],
+   ['Duration','3 hours (180 min)','—','—'],
+   ['Total','65 questions','100 marks','—'],
+   ['General Aptitude','10 questions','15 marks','common to all papers'],
+   ['Engineering Mathematics','—','13 marks','within the CS paper'],
+   ['CS subject questions','55 questions total with GA','72 marks','—'],
+   ['MCQ','1 or 2 marks each','—','<b>negative: −1/3 and −2/3</b>'],
+   ['MSQ','1 or 2 marks each','—','no negative, <b>no partial credit</b>'],
+   ['NAT','1 or 2 marks each','—','no negative marking']
+ ]},
+ syllabus:{src:'p', note:'Verbatim from the official GATE 2027 CS syllabus PDF. Syllabi were revised for 2027.', items:[
+  ['1 · Engineering Mathematics','<b>Discrete Mathematics:</b> propositional and first-order logic; sets, relations, functions, partial orders, lattices; monoids, groups; graphs — connectivity, matching, colouring; combinatorics — counting, recurrence relations, generating functions. <b>Linear Algebra:</b> matrices, determinants, systems of linear equations, eigenvalues and eigenvectors, LU decomposition. <b>Calculus:</b> limits, continuity, differentiability, maxima and minima, mean value theorem, integration. <b>Probability and Statistics:</b> random variables; uniform, normal, exponential, Poisson, binomial distributions; mean, median, mode, standard deviation; conditional probability and Bayes theorem.'],
+  ['2 · Digital Logic','Boolean algebra and minimisation — algebraic technique, Karnaugh map, tabular method. Design of combinational and sequential circuits. Number representation and arithmetic (fixed and floating point).'],
+  ['3 · Computer Organization &amp; Architecture','Instruction set and addressing modes. Design of ALU. Design of control unit — hardwired and microprogrammed. Memory interfacing and hierarchy: performance, cache memory mapping. I/O interface (interrupt and DMA). Instruction pipelining, pipeline hazards.'],
+  ['4 · Programming &amp; Data Structures','Programming in C. Recursion. Arrays, stacks, queues, linked lists, trees, binary search trees, binary heaps, graphs.'],
+  ['5 · Algorithms','Searching, sorting, hashing. Asymptotic worst-case time and space complexity. Design techniques: greedy, dynamic programming, divide-and-conquer. Graph traversals, minimum spanning trees, shortest paths.'],
+  ['6 · Theory of Computation','Regular expressions and finite automata. Context-free grammars and push-down automata. Regular and context-free languages, pumping lemma. Turing machines and undecidability.'],
+  ['7 · Compiler Design','Lexical analysis, parsing, syntax-directed translation. Runtime environments. Intermediate code generation. Local optimisation. Data flow analyses: constant propagation, liveness analysis, common sub-expression elimination.'],
+  ['8 · Operating System','System calls, processes, threads, inter-process communication, concurrency and synchronisation. Deadlock. CPU and I/O scheduling. Memory management and virtual memory. File systems.'],
+  ['9 · Databases','ER-model. Relational model: relational algebra, tuple calculus, SQL. Integrity constraints, normal forms. File organization, indexing (B and B+ trees). Transactions and concurrency control.'],
+  ['10 · Computer Networks','Principles of layering. Basics of switching (circuit, packet, virtual circuit) and performance metrics. Data link layer: error detection, medium access control, Ethernet. Distance vector and link state routing. IPv4 — fragmentation, CIDR notation, NAT. TCP — flow control and congestion control, socket API. DNS and HTTP.']
+ ]},
+ ranks:{src:'u', note:'GATE gives a score and an All India Rank, not a post. What the rank buys, indicatively, for CS:', rows:[
+   ['AIR ~1–200','Shortlists at the highest-paying PSUs that take CS (ONGC, IOCL), and the top IIT M.Tech seats'],
+   ['AIR ~200–800','BARC OCES/DGFS screening; most CS-admitting PSU drives; IIT / top NIT M.Tech'],
+   ['AIR ~800–3000','NIT and IIIT M.Tech seats with MoE stipend ₹12,400/month'],
+   ['Qualified only','Score valid 3 years — you can reuse it for BARC 2027/28/29 and later PSU drives']
+ ]}
+},
+{
+ id:'isro', name:"ISRO Scientist / Engineer 'SC'", org:'ISRO — ICRB', sector:['PSU/Science'], src:'p',
+ verdict:'cond', condition:'Requires 65% marks or CGPA 6.84/10 in B.E./B.Tech CSE', status:'open', closes:'2026-09-16',
+ tag:'21 Computer Science posts — the best pure-CSE job open right now',
+ facts:{'Closes':'16 Sep 2026, 11:55 pm','Vacancies':'175 total · 21 CS','Pay':'Level 10, ₹56,100'},
+ kv:[['Advertisement','ISRO:ICRB:03(EMC):2026, dated 27-08-2026'],['Vacancy split','Electronics ≈99 · Mechanical ≈52 · <b>Computer Science 21</b> (+1 PRL post per stream)'],['Degree','B.E./B.Tech in Computer Science Engineering'],['<b>Hard gate</b>','<b>Minimum 65% marks or CGPA 6.84/10</b>'],['Age','18–28 as on 16 Sep 2026 — 23 clears'],['Basic pay','₹56,100, Pay Matrix Level 10'],['Fee','₹750 for UR male — ₹500 refunded after the written test, ₹250 non-refundable'],['Apply at','isro.gov.in careers portal, online only']],
+ why:'Real engineering work, Level 10 from day one, and a post that names your discipline. Check your aggregate against 65% before anything else — that single number decides whether this is real for you.',
+ applicants:{n:'ISRO ICRB drives typically draw well over 1 lakh applications across streams for a few hundred posts', src:'u'},
+ pattern:{src:'s', note:'Sources conflict on whether this cycle uses GATE. The majority describe ISRO\'s own test; a separate advertisement ISRO:ICRB:02(EMC-CEPO):2026 dated 28-07-2026 appears to be the GATE-routed one. Read the PDF.', rows:[
+   ['Stage 1','Written test / CBT — objective, CS subject-based','~50% weight','—'],
+   ['Stage 2','Interview','~50% weight','shortlist from written'],
+   ['Stage 3','Document verification and medical','—','—']
+ ]},
+ syllabus:{src:'u', note:'Not published as a formal syllabus. In practice the written test tracks the standard CS undergraduate core — effectively the GATE CS syllabus.', items:[
+   ['Core subjects','Data structures, algorithms, operating systems, DBMS, computer networks, computer organisation, theory of computation, compiler design, software engineering, programming in C/C++.'],
+   ['Emphasis','Heavier on OS, networks, DBMS and data structures than on mathematics, compared with GATE.'],
+   ['Overlap','Preparing GATE CS covers most of this paper. The two reinforce each other — a genuine reason to do both.']
+ ]},
+ ranks:{src:'u', note:'Single post, single grade — there is no rank-to-post mapping. Merit rank decides selection and, later, centre allocation.', rows:[
+   ['Selected','Scientist/Engineer SC, Level 10 — posted to a centre (VSSC, SAC, LPSC, URSC, SDSC and others) by merit and vacancy'],
+   ['Progression','SC → SD → SE → SF → SG, largely time-bound with performance review']
+ ]}
+},
+
+/* ============ UPSC ============ */
+{
+ id:'cse', name:'Civil Services Examination', org:'UPSC', sector:['UPSC'], src:'s',
+ verdict:'go', status:'next',
+ tag:'IAS, IPS, IFS, IRS and 20-odd other services — any bachelor\'s degree',
+ facts:{'Notification':'13 Jan 2027','Prelims':'23 May 2027','Vacancies':'~933 (2026)'},
+ kv:[['Age','21–32 as on 1 Aug of exam year — <b>6 attempts</b> for General'],['Degree','Any bachelor\'s degree. Your CSE counts only as proof of graduation'],['2026 cycle','Notification 4 Feb 2026 · applications 4–27 Feb · Prelims 24 May · Mains 21, 22, 23, 29, 30 Aug — <b>closed</b>'],['2027 cycle','<b>Notification 13 Jan 2027 · exam 23 May 2027</b> — from UPSC\'s own Annual Calendar 2027'],['Vacancies','~933 announced 2026 (reported as 1,016 at prelims-result stage — UPSC says "approximately") · 979 in 2025'],['Fee','₹100 for General male, Prelims'],['IFoS','Separate 80 vacancies, entered through the same Prelims']],
+ why:'The highest-authority route in this atlas and a separate life decision, not an addition to a list. Two-year commitment minimum; prepares for almost nothing else.',
+ applicants:{n:'2026: ≈8.2 lakh applied, ≈5.49 lakh appeared at Prelims, 13,343 cleared', src:'p'},
+ pattern:{src:'u', rows:[
+  ['Prelims GS Paper I','100 questions','200 marks','2 hrs · −1/3 negative · merit-deciding'],
+  ['Prelims CSAT Paper II','80 questions','200 marks','2 hrs · <b>qualifying only, 33%</b>'],
+  ['Mains — Essay','Descriptive','250','3 hrs'],
+  ['Mains — GS I to IV','4 papers, descriptive','250 each = 1000','3 hrs each'],
+  ['Mains — Optional I &amp; II','Descriptive','250 each = 500','3 hrs each'],
+  ['Mains — Qualifying','Indian language + English','300 each','not counted in merit'],
+  ['Personality Test','Interview','275','—'],
+  ['Total merit','Mains 1750 + Interview 275','<b>2025</b>','—']
+ ]},
+ syllabus:{src:'u', items:[
+  ['Prelims GS I','Current events; History of India and national movement; Indian and world geography; Indian polity and governance; economic and social development; environment, biodiversity and climate change; general science.'],
+  ['Prelims CSAT','Comprehension; interpersonal and communication skills; logical reasoning and analytical ability; decision-making; general mental ability; basic numeracy and data interpretation to Class X level.'],
+  ['Mains GS I','Indian heritage and culture; modern Indian history; world history; Indian society; geography — physical, social, economic.'],
+  ['Mains GS II','Constitution, polity, governance; social justice; welfare schemes; international relations.'],
+  ['Mains GS III','Economy; agriculture; science and technology; environment; internal security; disaster management. <b>Your CSE degree pays off here</b> — cybersecurity, AI, digital infrastructure are recurring themes.'],
+  ['Mains GS IV','Ethics, integrity and aptitude; case studies.'],
+  ['Optional','One subject from ~48. There is no Computer Science optional — engineering candidates commonly take Mathematics, Anthropology, Sociology, PSIR or Geography.']
+ ]},
+ ranks:{src:'u', note:'Indicative General-category rank bands. These shift every year with vacancy mix and cadre preference — the ordering is stable, the numbers are not.', rows:[
+  ['~1–90','IAS — Indian Administrative Service'],
+  ['~35–130','IFS — Indian Foreign Service (small intake, high preference)'],
+  ['~90–250','IPS — Indian Police Service'],
+  ['~200–500','IRS (Income Tax)'],
+  ['~250–550','IAAS — Indian Audit and Accounts Service'],
+  ['~300–650','IRS (Customs and Indirect Taxes)'],
+  ['~350–750','IRTS, IRAS, IRPS — Railway services'],
+  ['~400–850','IDAS, IPoS, ICAS, IDES'],
+  ['~700–1000+','DANICS, DANIPS and other Group B services']
+ ]}
+},
+{
+ id:'capf', name:'CAPF Assistant Commandant', org:'UPSC', sector:['UPSC','Police/CAPF'], src:'p',
+ verdict:'cond', condition:'Physical and medical standards, plus PST/PET', status:'next',
+ tag:'Gazetted officer entry into BSF, CRPF, CISF, ITBP, SSB',
+ facts:{'Age':'20–25','Vacancies':'432 (2025)','Notification':'~March 2027'},
+ kv:[['Age','20–25 — <b>your window closes at 25</b>'],['Degree','Any bachelor\'s degree'],['2026 cycle','Written 19 July 2026 · result 25 Aug 2026 · PST/PET pending'],['2025 cycle','Final result 7 Aug 2026 — 350 recommended + 164 reserve against 432 vacancies'],['Physical','Height, chest, running standards apply; medical is strict'],['Next','Notification expected ~March 2027']],
+ why:'One of the few genuinely gazetted uniformed entries open to a plain graduate. Age-limited — you have roughly two cycles left.',
+ applicants:{n:'Typically 2.5–4 lakh applicants for a few hundred posts', src:'u'},
+ pattern:{src:'u', rows:[
+  ['Paper I','General Ability and Intelligence — objective','250 marks','2 hrs · negative marking'],
+  ['Paper II','General Studies, Essay and Comprehension — descriptive','200 marks','3 hrs'],
+  ['PST / PET','Height, chest, race, long jump, shot put','qualifying','—'],
+  ['Interview / Personality Test','—','150 marks','—'],
+  ['Medical','Detailed standards','qualifying','—']
+ ]},
+ syllabus:{src:'u', items:[
+  ['Paper I','General mental ability; general science; current events; Indian polity and economy; history of India; Indian and world geography.'],
+  ['Paper II','Part A — essay questions in English or Hindi on modern Indian history, freedom struggle, geography, polity, economy, security and human rights. Part B — comprehension, précis, other communication/language skills, in English only.']
+ ]},
+ ranks:{src:'u', note:'Force allocation by merit and preference.', rows:[
+  ['Top merit','CISF and CRPF are usually the most preferred; BSF next'],
+  ['Mid merit','ITBP, SSB'],
+  ['Entry grade','Assistant Commandant, Pay Level 10 — gazetted Group A']
+ ]}
+},
+{
+ id:'cds', name:'Combined Defence Services', org:'UPSC', sector:['UPSC','Defence'], src:'p',
+ verdict:'cond', condition:'SSB interview; IMA/INA/AFA entries require unmarried status; age windows are tight', status:'next',
+ tag:'IMA, INA, AFA and OTA — officer entry on any degree',
+ facts:{'Age':'~19–25 by entry','Exam':'CDS (II) 13 Sep 2026','Next':'CDS (I) 2027'},
+ kv:[['Age','Varies by academy — roughly 19–24 for IMA/INA/AFA, 19–25 for OTA. <b>Check your DOB against the exact window in the notification</b>'],['Degree','Any degree for IMA and OTA; engineering degree for AFA'],['Marital status','IMA, INA and AFA require unmarried candidates'],['2026 status','CDS (II) 2026 admit cards issued 3 Sep, exam 13 Sep — closed'],['Next','CDS (I) 2027, notification ~Dec 2026']],
+ why:'Cheap to add if you meet the medical standards. The written paper is easier than most on this page; the SSB is the real filter.',
+ applicants:{n:'Typically 1.5–3 lakh per cycle', src:'u'},
+ pattern:{src:'u', rows:[
+  ['IMA / INA / AFA','English, General Knowledge, Elementary Mathematics','100 marks each = 300','2 hrs per paper'],
+  ['OTA','English, General Knowledge only','100 marks each = 200','2 hrs per paper'],
+  ['SSB Interview','5-day assessment','300 marks','Stage 1 screening + Stage 2'],
+  ['Negative marking','1/3 of marks per wrong answer','—','—']
+ ]},
+ syllabus:{src:'u', items:[
+  ['English','Comprehension, spotting errors, synonyms and antonyms, sentence improvement, ordering of words and sentences.'],
+  ['General Knowledge','Current affairs; history; geography; polity; economics; general science; defence-related awareness.'],
+  ['Elementary Mathematics','Class X level — arithmetic, algebra, trigonometry, geometry, mensuration, statistics. Not required for OTA.'],
+  ['SSB','Officer-like qualities assessed through screening (OIR + PPDT), psychological tests (TAT, WAT, SRT, self-description), group testing and the interview. No amount of written preparation substitutes.']
+ ]},
+ ranks:{src:'u', rows:[
+  ['Merit + medical','Indian Military Academy — permanent commission'],
+  ['Merit + medical','Indian Naval Academy, Air Force Academy'],
+  ['Separate merit','Officers Training Academy — short service commission, and the only entry open to married candidates']
+ ]}
+},
+{
+ id:'ese', name:'Engineering Services (ESE / IES)', org:'UPSC', sector:['UPSC','PSU/Science'], src:'s',
+ verdict:'no', condition:'CSE is not a notified stream — only Civil, Mechanical, Electrical and Electronics &amp; Telecom', status:'closed',
+ tag:'Permanently shut to a Computer Science degree',
+ facts:{'Streams':'Civil · Mech · Electrical · E&amp;T','Vacancies':'167 (2027)','Verdict':'Not eligible'},
+ kv:[['Why not','The four notified branches do not include Computer Science or IT'],['Age','21–30 — irrelevant to you'],['2027 cycle','Notification 16 Sep 2026 · applications close 6 Oct · Prelims 31 Jan 2027'],['What would unlock it','Nothing you would sensibly do. A second B.Tech in a notified branch is the only route, and it is not worth it']],
+ why:'Listed because it appears on every "best exams for engineers" list and wastes CSE candidates\' time every year. It is not available to you and never will be.',
+ applicants:{n:'≈2–3 lakh across the four branches', src:'u'},
+ pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'ora', name:'ORA Direct Recruitment', org:'UPSC', sector:['UPSC'], src:'p',
+ verdict:'cond', condition:'Most posts demand 2–5 years of experience', status:'watch',
+ tag:'Interview-only advertisements, roughly monthly — the most overlooked engineer route here',
+ facts:{'Frequency':'~Monthly','Fee':'₹25','Selection':'No written exam'},
+ kv:[['How it works','UPSC advertises specific posts for specific ministries. Shortlisting on qualification, then interview. <b>No written examination.</b>'],['Latest','Advt 10/2026 — 7 posts, 34 vacancies, window 8–28 Aug 2026 (4 Sep for Ladakh). Closed'],['That advertisement','AEE Civil 1 · <b>AEE Electronics 9</b> · Asst Director Engineering 1 · Supt Translation Hindi 1 · Research Officer 11 · Horticulture Development Officer 4 · Soil Conservation Assistant 7'],['Fee','₹25 for UR male — <b>no exemption</b> for UR, OBC or EWS males'],['Catch','Nearly every post requires prior experience, so this becomes powerful in your late twenties rather than now']],
+ why:'Verification specifically refused to confirm that no ORA post suits a fresh CSE graduate — it is genuinely advertisement-by-advertisement. Worth a standing monthly check at upsconline.nic.in.',
+ applicants:{n:'Small fields — often a few hundred per post, far better odds than any examination here', src:'u'},
+ pattern:{src:'p', rows:[['Stage 1','Shortlisting on qualification and experience','—','—'],['Stage 2','Interview','—','dates intimated individually']]},
+ syllabus:null,
+ ranks:{src:'p', rows:[['Direct','You apply for one named post in one named ministry. There is no rank list and no allocation — you either get that post or you do not']]}
+},
+
+/* ============ SSC ============ */
+{
+ id:'cgl', name:'Combined Graduate Level (CGL)', org:'SSC', sector:['SSC'], src:'p',
+ verdict:'go', status:'next',
+ tag:'12,000–15,000 posts a year — the largest realistic pool available to you',
+ facts:{'Vacancies':'12,256 (2026)','Tier-2':'Dec 2026','Next cycle':'~May 2027'},
+ kv:[['Age','18–32 depending on post — you clear every band'],['Degree','Any bachelor\'s degree. Assistant Audit Officer additionally favours a commerce background but does not require it'],['2026 cycle','Notification ~21 May · applications closed <b>22 June 2026</b> · Tier-1 Aug–Sep · Tier-2 December 2026'],['2025 cycle','<b>Final vacancies 15,118</b> (revised down from 15,125) · final result 14 May 2026'],['2025 category split','UR 6,458 · OBC 3,832 · SC 2,221 · EWS 1,475 · ST 1,132'],['Next','Notification expected ~May 2027']],
+ why:'Twelve thousand posts a year is a different order of probability from anything else in this atlas. Your CSE counts for nothing here, but the volume more than compensates.',
+ applicants:{n:'Typically 25–30 lakh registrations for ~15,000 posts — roughly 1 in 180', src:'u'},
+ warn:'<b>"UR" is not "General."</b> Of 2025\'s 6,458 Unreserved seats, <b>2,368 went to reserved-category candidates qualifying at UR merit</b> — 794 EWS, 1,526 OBC, 40 SC, 8 ST. Roughly 4,090 actually went to General candidates. Every ratio built on the UR headline overstates your odds by more than a third. From SSC\'s own allocation PDF.',
+ pattern:{src:'u', rows:[
+  ['Tier-1','General Intelligence &amp; Reasoning 25Q · General Awareness 25Q · Quantitative Aptitude 25Q · English 25Q','200 marks','60 min · −0.50 per wrong'],
+  ['Tier-2 Paper I Session I','Module I Mathematical Abilities + Module II Reasoning and General Intelligence','270 marks','1 hr'],
+  ['Tier-2 Paper I Session I','Module III English Language and Comprehension + General Awareness','390 marks','1 hr'],
+  ['Tier-2 Paper I Session II','Module IV Computer Knowledge','60 marks','15 min · <b>qualifying</b>'],
+  ['Tier-2 Paper I Session II','Module V Data Entry Speed Test','—','15 min · qualifying'],
+  ['Tier-2 Paper II / III','Statistics (JSO) / General Studies Finance &amp; Economics (AAO)','200 marks','2 hrs · post-specific'],
+  ['Negative marking','Tier-2 Paper I: −1 per wrong','—','—']
+ ]},
+ syllabus:{src:'u', note:'The Computer Knowledge module is qualifying and trivially easy for you — a small structural advantage.', items:[
+  ['Reasoning','Analogies, similarities and differences, space visualisation, problem solving, analysis, judgement, decision making, visual memory, relationship concepts, arithmetical reasoning, coding-decoding, syllogism, series, non-verbal reasoning.'],
+  ['Quantitative Aptitude','Number systems, percentage, ratio and proportion, averages, interest, profit and loss, discount, mixture and alligation, time and distance, time and work, algebra, elementary geometry, mensuration, trigonometry, heights and distances, data interpretation.'],
+  ['English','Comprehension, cloze test, spotting errors, fill in the blanks, synonyms and antonyms, spelling, idioms and phrases, one-word substitution, sentence improvement, active/passive, direct/indirect narration, para jumbles.'],
+  ['General Awareness','History, geography, polity, economics, general science, current affairs, static GK, schemes and awards.'],
+  ['Computer Knowledge (Tier-2)','Computer basics, software and hardware, MS Office, internet and networking basics, cyber security basics. <b>Free marks for a CSE graduate.</b>'],
+  ['AAO paper','Finance and accounts fundamentals plus economics and governance — only if you opt for Assistant Audit Officer.']
+ ]},
+ ranks:{src:'u', note:'CGL allocates by merit against your submitted post preference. Ordering below is by typical cutoff, highest first — stable across years, though exact positions move.', rows:[
+  ['Highest cutoff','<b>Assistant Audit Officer</b> / Assistant Accounts Officer, CAG — Pay Level 8, the most sought post'],
+  ['Very high','<b>Assistant Section Officer</b>, Central Secretariat Service (CSS) — Level 7, Delhi posting'],
+  ['Very high','Assistant Section Officer, Ministry of External Affairs — Level 7, foreign postings'],
+  ['High','<b>Inspector (Income Tax)</b>, CBDT — Level 7'],
+  ['High','Inspector (CGST &amp; Central Excise), CBIC — Level 7'],
+  ['High','Assistant Enforcement Officer, Directorate of Enforcement — Level 7'],
+  ['High','<b>Sub Inspector, CBI</b> — Level 7 (has a physical standard)'],
+  ['Mid–high','Preventive Officer / Examiner, Customs — Level 7'],
+  ['Mid','Assistant / ASO in other ministries and AFHQ — Level 7'],
+  ['Mid','Inspector (Posts), Department of Posts — Level 6'],
+  ['Mid','Divisional Accountant, CAG — Level 6'],
+  ['Lower','Auditor (CGDA, CGA) — Level 5'],
+  ['Lower','Accountant / Junior Accountant — Level 5'],
+  ['Lowest','Senior Secretariat Assistant / UDC, Tax Assistant — Level 4']
+ ]}
+},
+{
+ id:'cpo', name:'CPO — Sub Inspector', org:'SSC', sector:['SSC','Police/CAPF'], src:'u',
+ verdict:'cond', condition:'170 cm height, 80–85 cm chest, and uncorrected 6/6 vision — glasses and LASIK disqualify', status:'watch',
+ tag:'SI in Delhi Police and CAPF',
+ facts:{'Age':'20–25','Height':'170 cm','Vision':'Uncorrected'},
+ kv:[['Age','20–25 for General'],['Degree','Any bachelor\'s degree'],['Physical (male, General)','<b>Height 170 cm</b> · chest 80–85 cm unexpanded–expanded · relaxed to 165 cm for hill areas, 162.5 cm and 77–82 cm for ST'],['PET (male)','100 m in 16 s · 1.6 km in 6.5 min · long jump 3.65 m · high jump 1.2 m · shot put 4.5 m — three attempts for field events'],['<b>Medical</b>','<b>Distant vision 6/6 and 6/9 uncorrected, near vision N6/N9. Spectacles and corrective surgery are not permitted.</b>'],['Extra','Delhi Police SI male candidates must hold a valid LMV driving licence before PET/PST']],
+ why:'The vision standard is the real gate and rules out a large share of engineering graduates. Confirm it before building any plan on this.',
+ applicants:{n:'Typically 4–6 lakh applicants', src:'u'},
+ pattern:{src:'u', rows:[
+  ['Paper I','General Intelligence &amp; Reasoning · General Knowledge · Quantitative Aptitude · English — 50Q each','200 marks','2 hrs · −0.25'],
+  ['PET / PST','Physical standards and events','qualifying','—'],
+  ['Paper II','English Language and Comprehension — 200Q','200 marks','2 hrs · −0.25'],
+  ['Medical','Detailed standards including uncorrected vision','qualifying','—']
+ ]},
+ syllabus:{src:'u', items:[
+  ['Paper I','Same four-subject base as CGL Tier-1, at a similar level — so preparation carries over almost entirely.'],
+  ['Paper II','English only, and demanding: error spotting, fill in the blanks, comprehension, vocabulary, idioms, active/passive, narration, para jumbles, cloze.']
+ ]},
+ ranks:{src:'u', rows:[
+  ['Higher merit','Sub Inspector, Delhi Police — Level 6, Delhi posting, generally most preferred'],
+  ['Merit','Sub Inspector (GD) in CAPF — BSF, CRPF, CISF, ITBP, SSB — Level 6, all-India posting']
+ ]}
+},
+{
+ id:'sscmisc', name:'CHSL, Stenographer, Selection Post, JE', org:'SSC', sector:['SSC'], src:'u',
+ verdict:'cond', condition:'CHSL is a 12th-level exam, below your qualification; SSC JE has no CSE stream', status:'watch',
+ tag:'The rest of the SSC stable, briefly',
+ facts:{'CHSL':'12th level','SSC JE':'No CSE stream','Selection Post':'Varies'},
+ kv:[['CHSL','LDC, JSA, DEO. Qualification is 12th pass — you are over-qualified and the pay is Level 2–4. Only worth it as a floor'],['Stenographer','Requires shorthand skill at 80 or 100 wpm. Not realistic without training'],['Selection Post','Rolling advertisements across many departments and qualification levels, including graduate posts. Genuinely worth watching — small fields, varied posts'],['SSC JE','<b>Civil, Mechanical, Electrical and Quantity Surveying only.</b> No Computer Science stream'],['Coverage','None of these was verified this session']],
+ why:'Included for completeness. Selection Post is the only one of the four worth an active watch.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+
+/* ============ BANKING & REGULATORS ============ */
+{
+ id:'sebi', name:'Grade A Assistant Manager — IT stream', org:'SEBI', sector:['Banking/Regulator','CSE-native'], src:'u',
+ verdict:'go', status:'watch',
+ tag:'Highest-paying route here that explicitly wants an engineering degree in any branch',
+ facts:{'Basic':'₹62,500','Gross':'~₹1.84L Mumbai','Age':'max 30'},
+ kv:[['Type','<b>Statutory regulator</b> — not a bank'],['Degree','<b>Bachelor\'s degree in Engineering, any branch.</b> No postgraduate qualification needed'],['Age','Maximum 30 for General'],['Basic pay','₹62,500'],['Gross','≈₹1.84 lakh/month in Mumbai without accommodation; ≈₹1.43 lakh with accommodation'],['2025 IT stream','22 vacancies — UR 9, OBC 5, SC 4, ST 2, EWS 2'],['2026','Not announced as of this research'],['Fee','₹1,000 + 18% GST for General']],
+ why:'The Phase-2 IT paper tests debugging and dry runs — you would be examined on what you actually studied, against a field of engineers rather than the whole graduate population.',
+ applicants:{n:'Small relative to banking exams — a few tens of thousands for the IT stream', src:'u'},
+ pattern:{src:'u', rows:[
+  ['Phase 1 Paper 1','General awareness, English, quantitative aptitude, reasoning','100 marks','1 hr'],
+  ['Phase 1 Paper 2','<b>Information Technology</b> — objective','100 marks','40 min'],
+  ['Phase 2 Paper 1','English — descriptive (essay, précis, comprehension)','100 marks','1 hr'],
+  ['Phase 2 Paper 2','<b>Information Technology</b> — including debugging and dry runs','100 marks','—'],
+  ['Phase 3','Interview','—','—']
+ ]},
+ syllabus:{src:'u', items:[
+  ['IT paper','Programming and data structures, DBMS and SQL, operating systems, computer networks, software engineering, information security and cyber security, data communication, cloud and emerging technologies.'],
+  ['Distinctive','<b>Debugging and dry-run questions</b> — you are given code and asked to trace or fix it. Practise this specifically; it is unusual among government papers.'],
+  ['General stream papers','Securities market awareness, financial regulation, SEBI\'s own role and recent circulars.']
+ ]},
+ ranks:{src:'u', rows:[
+  ['Selected','Assistant Manager (Grade A), IT stream — officer cadre from day one'],
+  ['Progression','Grade A → B (Manager) → C (Assistant General Manager) → D → E → F']
+ ]}
+},
+{
+ id:'rbi', name:'Grade B Officer (DR — General)', org:'Reserve Bank of India', sector:['Banking/Regulator'], src:'u',
+ verdict:'cond', condition:'Requires 60% in the bachelor\'s degree', status:'closed',
+ tag:'Highest basic pay in this atlas — but a marks gate and only 16 UR posts',
+ facts:{'Basic':'₹78,450','Age':'21–30','2026 posts':'60 total, 16 UR'},
+ kv:[['Type','<b>Statutory regulator</b> — the central bank'],['Degree','Bachelor\'s with <b>minimum 60%</b>, or post-graduation with 55%. <b>Check your aggregate</b>'],['Age','21–30'],['Basic pay','₹78,450 · gross ≈₹1,54,936 without HRA'],['2026 cycle','Brief notification 28 Apr, full notification 29 Apr 2026 — <b>closed</b>'],['2026 vacancies','60 total — 40 General DR, 10 DEPR, 10 DSIM. <b>Only 16 of the General posts are UR</b>'],['Fee','₹850 + 18% GST for General']],
+ why:'Sixteen unreserved seats nationally. Prestigious and well paid, but the arithmetic is brutal — treat it as a bonus attempt alongside SEBI, not a plan.',
+ applicants:{n:'Typically 2–3 lakh for a double-digit vacancy count', src:'u'},
+ pattern:{src:'u', rows:[
+  ['Phase 1','Objective — general awareness, English, quantitative aptitude, reasoning','200 marks','2 hrs'],
+  ['Phase 2 Paper I','Economic and Social Issues','100 marks','—'],
+  ['Phase 2 Paper II','English — writing skills, descriptive','100 marks','—'],
+  ['Phase 2 Paper III','Finance and Management','100 marks','—'],
+  ['Phase 3','Interview','75 marks','—']
+ ]},
+ syllabus:{src:'u', items:[
+  ['ESI','Growth and development, Indian economy, globalisation, social structure, education, health, poverty, urbanisation, social justice.'],
+  ['F&amp;M','Financial system, regulators, financial markets, risk management, basics of derivatives, corporate governance, management fundamentals, motivation, leadership, communication.'],
+  ['Phase 1','Standard banking-exam aptitude — overlaps heavily with IBPS and SSC preparation.']
+ ]},
+ ranks:{src:'u', rows:[['Selected','Grade B Officer — Manager scale, posted to an RBI office'],['Progression','Grade B → C → D → E → F → Chief General Manager']]}
+},
+{
+ id:'ibpsso', name:'Specialist Officer — IT Officer Scale I', org:'IBPS', sector:['Banking/Regulator','CSE-native'], src:'u',
+ verdict:'go', status:'exam',
+ tag:'The CSE-native banking entry, and far less contested than PO',
+ facts:{'Prelims':'sat 29 Aug 2026','Mains':'1 Nov 2026','Age':'20–30'},
+ kv:[['Type','<b>Public-sector banks</b> — allocation across participating banks'],['Degree','Engineering in Computer Science / IT / Electronics, or MCA. <b>Your degree is the qualification here</b>'],['Age','20–30'],['2026 cycle','Notification 1 July 2026 · Prelims 29 Aug 2026 · <b>Mains 1 Nov 2026</b>'],['Vacancies','Not verified this session'],['Next','Notification typically July']],
+ why:'One of only a handful of routes on this page where a Computer Science degree is the entry requirement rather than a formality. Substantially smaller field than PO.',
+ applicants:{n:'Far smaller than PO — typically tens of thousands across all SO streams', src:'u'},
+ pattern:{src:'u', rows:[
+  ['Prelims','English 50Q · Reasoning 50Q · Quantitative Aptitude 50Q','150 marks','60 min · −0.25'],
+  ['Mains','<b>Professional Knowledge — IT</b>, 60 questions','60 marks','45 min · −0.25'],
+  ['Interview','—','100 marks','final merit 80:20 Mains:Interview']
+ ]},
+ syllabus:{src:'u', items:[
+  ['Professional Knowledge — IT','DBMS and SQL; data structures and algorithms; operating systems; computer networks and TCP/IP; software engineering and SDLC; information security and cryptography; web technologies; data communication; cloud computing basics; basic hardware and computer organisation.'],
+  ['Weighting','DBMS, networking and data structures dominate. Questions are undergraduate-level and factual rather than analytical.']
+ ]},
+ ranks:{src:'u', rows:[
+  ['Selected','IT Officer Scale I — Junior Management Grade Scale I, officer cadre'],
+  ['Allocation','Merit plus bank preference across participating public-sector banks'],
+  ['Progression','Scale I → II → III → IV and upward']
+ ]}
+},
+{
+ id:'ibpspo', name:'Probationary Officer', org:'IBPS', sector:['Banking/Regulator'], src:'u',
+ verdict:'go', status:'exam',
+ tag:'7,565 posts — the largest banking intake',
+ facts:{'Vacancies':'7,565 (2026)','Mains':'4 Oct 2026','Basic':'₹48,480'},
+ kv:[['Type','Public-sector banks'],['Degree','Bachelor\'s in any discipline'],['Age','20–30'],['2026 cycle','Notification 30 June 2026 · Prelims 22–23 Aug · <b>Mains 4 Oct 2026</b> — applications closed'],['Vacancies','7,565 after two corrigendums added to the original count'],['Basic pay','₹48,480 · gross ≈₹85,000–90,000'],['New in 2026','A non-qualifying Personality Test inserted between Mains and Interview']],
+ why:'Large intake and heavy syllabus overlap with SSC CGL. Your degree counts for nothing, but the aptitude preparation is shared.',
+ applicants:{n:'Typically 8–12 lakh registrations', src:'u'},
+ pattern:{src:'u', rows:[
+  ['Prelims','English 30Q · Quantitative Aptitude 35Q · Reasoning 35Q','100 marks','60 min'],
+  ['Mains','170 objective questions — reasoning &amp; computer aptitude, general/economy/banking awareness, English, data analysis &amp; interpretation','200 marks','3 hrs'],
+  ['Mains descriptive','Letter and essay','25 marks','30 min'],
+  ['Personality Test','New in 2026','non-qualifying','—'],
+  ['Interview','—','100 marks','final merit 80:20']
+ ]},
+ syllabus:{src:'u', items:[
+  ['Quantitative / Data Analysis','Data interpretation, number series, quadratic equations, simplification, arithmetic word problems, data sufficiency.'],
+  ['Reasoning &amp; Computer Aptitude','Puzzles and seating arrangement (dominant), syllogism, inequality, coding-decoding, blood relations, input-output, data sufficiency, plus basic computer awareness.'],
+  ['English','Reading comprehension, cloze, error spotting, sentence rearrangement, fillers, vocabulary.'],
+  ['General / Banking Awareness','Current affairs of the last 6 months, banking terms, RBI functions, monetary policy, financial schemes, static GK.']
+ ]},
+ ranks:{src:'u', rows:[
+  ['Selected','Probationary Officer — Junior Management Grade Scale I'],
+  ['Allocation','Bank allotted by merit and preference — SBI runs a separate exam; larger banks are generally more preferred'],
+  ['Progression','Scale I → II → III, then senior management']
+ ]}
+},
+{
+ id:'ibpsrest', name:'Clerk, RRB Officer Scale I, SBI Junior Associate', org:'IBPS / SBI', sector:['Banking/Regulator'], src:'u',
+ verdict:'go', status:'exam',
+ tag:'The rest of the banking calendar in the next six months',
+ facts:{'Clerk Prelims':'10–11 Oct 2026','RRB Officer':'21–22 Nov 2026','SBI Clerk':'27 Sep / 3 Oct'},
+ kv:[['IBPS Clerk','Notification 1 Aug 2026 · Prelims 10–11 Oct · Mains 27 Dec 2026 · age 20–28'],['IBPS RRB Officer Scale I','Notification ~31 Aug 2026 · Prelims 21–22 Nov · Mains 20 Dec 2026 · age 18–30 — <b>the window may still be open, check today</b>'],['IBPS RRB Office Assistant','Prelims 6, 12, 13 Dec 2026 · Mains 30 Jan 2027'],['SBI Junior Associate','Prelims 27 Sep and 3 Oct 2026 · Mains 7 Nov 2026'],['Pattern','Same aptitude base as PO at a slightly easier level; clerical grades have no interview']],
+ why:'Cheap additional forms once you are preparing the aptitude block. Clerical grades are below your qualification but function as a floor.',
+ applicants:{n:'Clerk cycles typically draw 15–20 lakh registrations', src:'u'},
+ pattern:{src:'u', rows:[
+  ['Clerk Prelims','English 30Q · Numerical 35Q · Reasoning 35Q','100 marks','60 min'],
+  ['Clerk Mains','General/Financial Awareness, English, Reasoning &amp; Computer Aptitude, Quantitative Aptitude','200 marks','160 min'],
+  ['Clerical grades','<b>No interview</b> — merit on Mains alone','—','—'],
+  ['RRB Officer Scale I','Prelims then Mains then interview','—','—']
+ ]},
+ syllabus:{src:'u', items:[['Shared base','Identical subject list to IBPS PO at a marginally lower difficulty. If you prepare PO you have prepared all of these — the only genuine addition is regional-rural-bank awareness for the RRB papers.']]},
+ ranks:{src:'u', rows:[['Clerk','Customer Service Associate — clerical cadre, promotion to officer available internally'],['RRB Officer Scale I','Assistant Manager in a regional rural bank — officer cadre, usually rural or semi-urban posting']]}
+},
+{
+ id:'niacl', name:'Administrative Officer (generalist)', org:'NIACL', sector:['Banking/Regulator','Insurance'], src:'u',
+ verdict:'go', status:'watch',
+ tag:'Public-sector insurer, graduation in any discipline',
+ facts:{'Age':'21–30','Gross':'~₹85k+','2026':'Not notified'},
+ kv:[['Type','<b>PSU insurer</b>'],['Degree','Graduation in any discipline for the generalist stream. Specialist streams need CA, MBA, LLB or engineering'],['Age','21–30'],['Gross','≈₹85,000+ per month inclusive of basic, DA, HRA, transport and medical — <b>gross, not in-hand</b>'],['2026 status','<b>No official notification released.</b> The ~290 vacancy figure circulating is a projection from past cycles, not an announced count'],['Physical test','None']],
+ why:'Same aptitude base as banking, so it costs only a form. Watch for the notification.',
+ applicants:{n:'Typically 1.5–3 lakh', src:'u'},
+ pattern:{src:'u', rows:[
+  ['Prelims','100 marks','—','60 min · −0.25'],
+  ['Mains','200 marks objective + 30 marks descriptive','230 marks','—'],
+  ['Interview','—','—','—']
+ ]},
+ syllabus:{src:'u', items:[['Base','Reasoning, quantitative aptitude, English, general awareness with an insurance tilt — current affairs, insurance terminology, IRDAI basics.']]},
+ ranks:{src:'u', rows:[['Selected','Administrative Officer Scale I — officer cadre']]}
+},
+
+/* ============ PSU / SCIENCE ============ */
+{
+ id:'barc', name:'OCES / DGFS — Trainee Scientific Officer', org:'BARC / Dept of Atomic Energy', sector:['PSU/Science','CSE-native'], src:'s',
+ verdict:'go', status:'next',
+ tag:'CSE admitted, GATE-routed, stipended training year',
+ facts:{'Notification':'22 Dec 2026','Exam':'14–15 Apr 2027','Route':'GATE 2025/26/27'},
+ kv:[['Programme','Orientation Course for Engineering Graduates (OCES) and DAE Graduate Fellowship Scheme (DGFS)'],['Route','Applications via <b>GATE 2025, 2026 or 2027 score</b>, or BARC\'s own online exam'],['Age','Approximately 26 for General — verify against the notification'],['2027 cycle','<b>Notification 22 December 2026</b> · online exam 14–15 April 2027 · selection list April 2027 · interviews May 2027'],['Discipline','Computer Science is an eligible engineering discipline'],['Portal','barcocesexam.in']],
+ why:'Follows directly from the GATE form you are filing this month. One of the few CSE-open scientist tracks with a structured training year and a guaranteed posting.',
+ applicants:{n:'Not verified', src:'u'},
+ pattern:{src:'u', rows:[
+  ['Screening','GATE score, or BARC\'s own online examination','—','—'],
+  ['Online exam','Discipline-specific objective paper','—','—'],
+  ['Interview','Technical interview','—','May 2027'],
+  ['Training','One-year orientation course at BARC Training School with stipend','—','counts as service']
+ ]},
+ syllabus:{src:'u', items:[['CS paper','Tracks the GATE CS syllabus closely — the same core of algorithms, data structures, OS, DBMS, networks, TOC, COA and digital logic. Preparing GATE prepares this.']]},
+ ranks:{src:'u', rows:[
+  ['Selected','Trainee Scientific Officer → Scientific Officer C on completing the training school year'],
+  ['Posting','BARC, IGCAR, NPCIL, and other DAE units by merit and preference']
+ ]}
+},
+{
+ id:'psugate', name:'PSU recruitment through GATE', org:'IOCL, ONGC, NLC, ECIL, NFL, POSOCO and others', sector:['PSU/Science'], src:'u',
+ verdict:'cond', condition:'Requires a valid GATE score, and each PSU must actually notify the CS/IT discipline', status:'next',
+ tag:'Highest reported pay in this atlas — and the biggest unverified claim',
+ facts:{'Route':'GATE → GD → interview','CTC':'~₹20–24 LPA (top 3)','Timing':'~Mar–Jun'},
+ kv:[['Reported to admit CS/IT','IOCL · ONGC · NLC India · ECIL · NFL · POSOCO · DRDO · BARC'],['Age limits (General)','IOCL 26 · ONGC 30 · BARC 26 · DRDO 28 · ECIL 25 · NFL 27 · NLC 30 · POSOCO 28 — <b>you clear all eight</b>'],['Degree','B.E./B.Tech CSE with 50–65% aggregate depending on the PSU'],['Selection','GATE score → group discussion → personal interview. <b>ONGC and ECIL skip the GD</b>'],['Pay','ONGC, IOCL and NPCIL reported as highest at ≈₹20–24 LPA CTC'],['Timing','Drives open after GATE results, roughly March to June']],
+ warn:'<b>This is the most important unverified claim in the atlas.</b> GATE\'s own page lists ~25 PSU recruiters but states the list is <b>explicitly non-exhaustive</b> — it cannot rule any PSU in or out, and an attempt to treat it as definitive was refuted 0–3 during verification. The eight-PSU list above comes from a single secondary source. <b>Open each PSU\'s own latest advertisement and read its discipline table before counting on it.</b> Many GATE-based PSU drives genuinely exclude CSE.',
+ why:'Potentially the best-paid outcome available to you, and it costs nothing extra beyond the GATE form you are already filing.',
+ applicants:{n:'Each PSU shortlists a few hundred from the CS GATE pool', src:'u'},
+ pattern:{src:'u', rows:[['Stage 1','GATE CS score — cutoff set by each PSU','—','—'],['Stage 2','Group discussion (most PSUs)','—','—'],['Stage 3','Personal interview','—','—']]},
+ syllabus:{src:'u', items:[['Same as GATE','There is no separate syllabus. Your GATE CS preparation is the entire technical preparation. The GD and interview test communication and depth on your own projects.']]},
+ ranks:{src:'u', rows:[
+  ['AIR ~1–200','Realistic range for the top-paying PSU shortlists in CS'],
+  ['AIR ~200–800','Wider set of CS-admitting PSU drives'],
+  ['Entry grade','Engineer / Executive Trainee — E1 or equivalent, one year probation']
+ ]}
+},
+{
+ id:'drdorac', name:'RAC Scientist', org:'DRDO', sector:['PSU/Science','CSE-native'], src:'u',
+ verdict:'cond', condition:'The 2026 drive was Scientist C/D/E — experience-weighted, not entry-level', status:'watch',
+ tag:'CSE is an eligible discipline, but the last cycle wanted experience',
+ facts:{'2026 drive':'33 posts, Scientist C/D/E','Sci C basic':'₹67,700','Closed':'19 Jun 2026'},
+ kv:[['2026 advertisement','33 vacancies at Scientist C, D and E — <b>not the entry-level Scientist B</b> a fresh graduate targets'],['Age','Scientist C not exceeding 35 · Scientist D and E not exceeding 45'],['Discipline','<b>Computer Science &amp; Engineering is eligible</b> for multiple Scientist C and D positions'],['Basic pay','Scientist C ₹67,700 (Level 11) · D ₹78,800 (Level 12) · E ₹1,23,100 (Level 13)'],['Selection','Administrative screening → two technical screening levels → personal interview. <b>No written exam, no GATE score</b>'],['Fee','₹100 for General/OBC/EWS male'],['Closed','19 June 2026, 4 pm']],
+ why:'Your route once you have a few years of experience. Watch for a Scientist B cycle — DRDO runs those separately and they are the fresh-graduate entry.',
+ applicants:{n:'Not verified', src:'u'},
+ pattern:{src:'u', rows:[['Stage 1','Administrative screening on qualification','—','—'],['Stage 2','Technical screening, two levels','—','—'],['Stage 3','Personal interview','—','—']]},
+ syllabus:null,
+ ranks:{src:'u', rows:[['Scientist C','Level 11 — typically needs relevant experience'],['Scientist D / E','Levels 12 and 13 — senior, experience-weighted']]}
+},
+{
+ id:'ceptam', name:'CEPTAM — STA-B and Technician-A', org:'DRDO', sector:['PSU/Science'], src:'p',
+ verdict:'no', condition:'Advertised qualification is B.Sc / diploma / Class 10 + ITI — below a B.Tech', status:'closed',
+ tag:'Widely recommended to engineers, and wrong for you',
+ facts:{'CEPTAM-11':'561 STA-B + 203 Tech-A','Closed':'11 Jan 2026','Level':'Below B.Tech'},
+ kv:[['Advertised','561 Senior Technical Assistant-B and 203 Technician-A under the DRDO Technical Cadre'],['Qualification','B.Sc, or diploma in engineering, or Class 10 + ITI'],['Timeline','Opened 11 Dec 2025 · closed <b>11 Jan 2026</b> · Tier-1 March 2026 · Tier-2 June 2026 — cycle complete'],['Next','No CEPTAM-12 notification exists as of September 2026']],
+ why:'A B.Tech does not make you ineligible in every case, but this is a technician-grade cadre with technician-grade pay and progression. The RAC Scientist track is the DRDO route that matches your qualification.',
+ applicants:{n:'CEPTAM cycles routinely draw several lakh applications', src:'u'},
+ pattern:{src:'p', rows:[['Tier-1','Computer Based Test','—','screening'],['Tier-2','Computer Based Test','—','final merit']]},
+ syllabus:null, ranks:null
+},
+
+/* ============ DEFENCE ============ */
+{
+ id:'afcat', name:'AFCAT — Ground Duty (Technical)', org:'Indian Air Force', sector:['Defence'], src:'u',
+ verdict:'go', status:'watch',
+ tag:'Twice a year, small effort, and your engineering degree is the qualification',
+ facts:{'Age':'20–26','Flying':'20–24','Relaxation':'None for anyone'},
+ kv:[['Age','Ground Duty Technical and Non-Technical <b>20–26</b> · Flying <b>20–24</b> — reckoned as on 1 July of the entry year'],['<b>Relaxation</b>','<b>None, for any category.</b> These are hard cut-offs — General candidates lose nothing relative to others here'],['Degree','Engineering degree for the Technical branch'],['Nationality','Indian citizens only — NRIs cannot apply'],['Final-year students','May apply provided there is no backlog at the time of AFSB testing'],['Frequency','Twice a year — AFCAT 1 (~Dec notification) and AFCAT 2 (~June notification)'],['Unverified','Reports of a 60% degree bar and an unmarried clause could not be confirmed from the official page — <b>check the notification</b>']],
+ why:'Two cycles a year, a short written paper, and the engineering degree is the requirement rather than a formality. Cheap to add. The AFSB is the real filter.',
+ applicants:{n:'Typically 2–3 lakh per cycle', src:'u'},
+ pattern:{src:'u', rows:[
+  ['AFCAT','General awareness, verbal ability in English, numerical ability, reasoning and military aptitude — 100 questions','300 marks','2 hrs · −1 per wrong'],
+  ['EKT','Engineering Knowledge Test — <b>Technical branch only</b>, 50 questions','150 marks','45 min'],
+  ['AFSB','Stage 1 screening (officer intelligence rating + PPDT), Stage 2 psychological tests, group tasks, interview','—','5 days'],
+  ['Medical','Air Force medical standards','qualifying','—']
+ ]},
+ syllabus:{src:'u', items:[
+  ['AFCAT paper','General awareness — history, geography, polity, economics, current affairs, defence, art and culture, environment, sports. Verbal ability — comprehension, error detection, synonyms, antonyms, sentence completion. Numerical ability — decimals, fractions, simplification, percentage, ratio, average, profit and loss, time and work, time and distance. Reasoning and military aptitude — verbal and spatial reasoning.'],
+  ['EKT — Computer Science section','The EKT has a computer-science stream covering: analog and digital electronics basics, computer networks, operating systems, database systems, programming and data structures, computer organisation, plus a common engineering-mathematics and engineering-physics component.'],
+  ['Note','The EKT is undergraduate-level and narrower than GATE. Your degree work covers most of it directly.']
+ ]},
+ ranks:{src:'u', rows:[
+  ['Selected — Technical','Aeronautical Engineer (Electronics) or (Mechanical) — permanent or short service commission, Flying Officer'],
+  ['Selected — Flying','Pilot, subject to the tighter age band and stricter medical'],
+  ['Selected — Non-Technical','Administration, Logistics, Accounts, Education, Meteorology']
+ ]}
+},
+{
+ id:'sscttech', name:'SSC Tech (Men) — Short Service Commission', org:'Indian Army', sector:['Defence'], src:'s',
+ verdict:'cond', condition:'Unmarried only; whether Computer Science is a notified stream was not confirmed', status:'next',
+ tag:'No written exam and no application fee — the whole thing is the SSB',
+ facts:{'Age':'20–27','68th course':'350 male posts','Closed':'7 Aug 2026'},
+ kv:[['Age','20–27 — 23 sits comfortably inside'],['<b>Marital status</b>','<b>Unmarried candidates only.</b> A hard gate'],['Degree','Engineering degree "in the relevant discipline". <b>Whether Computer Science is notified was not confirmed</b> — check the notification\'s stream table'],['2026 cycle','68th SSC(T) Men / 39th SSCW(T) Women — <b>381 total: 350 male, 31 female</b>. Applications 9 July – 7 Aug 2026, closed'],['Selection','<b>No written exam.</b> Shortlisting on degree percentage → SSB interview → medical → merit list'],['Fee','<b>None</b>'],['Stipend','₹56,100/month during training'],['Next','Expected ~mid-2027']],
+ why:'The only officer entry here with no written examination at all. If you are unmarried and your percentage is competitive, the cost of applying is a form and five days at an SSB centre.',
+ applicants:{n:'Shortlisting is on degree percentage, so the effective cutoff is your marks, not a rank', src:'u'},
+ pattern:{src:'s', rows:[
+  ['Stage 1','Shortlisting on engineering degree percentage','—','no exam'],
+  ['Stage 2','SSB interview — 5 days','—','screening, psychological, GTO, interview'],
+  ['Stage 3','Medical examination','—','—'],
+  ['Stage 4','Merit list and joining OTA Chennai','—','—']
+ ]},
+ syllabus:{src:'u', items:[['No written syllabus','There is nothing to study for a paper. Preparation is SSB preparation — officer-like qualities, psychological tests (TAT, WAT, SRT, self-description), group discussion and planning tasks, physical fitness, and being able to talk fluently about your own engineering projects.']]},
+ ranks:{src:'u', rows:[
+  ['Selected','Lieutenant, Short Service Commission — 10 years, extendable to 14'],
+  ['Corps','Technical entries commonly go to Corps of Signals, EME, or Engineers. <b>Signals and EME are where a CSE degree is used</b>']
+ ]}
+},
+{
+ id:'icg', name:'Assistant Commandant (General Duty)', org:'Indian Coast Guard', sector:['Defence'], src:'p',
+ verdict:'cond', condition:'Needs Mathematics AND Physics at Class XII, on top of the degree. Male-only.', status:'watch',
+ tag:'Age window shuts at 25 — check your Class XII subjects today',
+ facts:{'Age':'21–25','Height':'157 cm min','Gate':'Maths + Physics in XII'},
+ kv:[['Age','<b>21–25</b> for General — adjudicated against the DOB window printed in each notification, "as on 1 July" of the reference year'],['Degree','Any degree from a recognised university'],['<b>Subject gate</b>','<b>Mathematics AND Physics up to Intermediate / Class XII.</b> Post-diploma graduates qualify if the diploma carried those subjects'],['Gender','<b>Male only.</b> Women enter through a separate Assistant Commandant (Women-SSA) post'],['Physical','Minimum height 157 cm (regional relaxations) · chest well-proportioned with minimum 5 cm expansion · weight proportionate ±10%'],['Vision','6/6 and 6/9 uncorrected, 6/6 and 6/6 corrected'],['Correction','<b>The "60% aggregate" requirement on coaching sites is NOT in the current official notification</b>'],['Latest cycle','CGCAT 01/2027 — notified 8 July 2025, 170 vacancies (140 GD + 30 Tech), applications 8–23 July 2025. Induction at INA Ezhimala tentatively 27 Dec 2026']],
+ why:'Genuinely open to you if your Class XII had Maths and Physics — which for a B.Tech CSE graduate it almost certainly did. The binding constraint is the age ceiling at 25.',
+ applicants:{n:'Not verified', src:'u'},
+ pattern:{src:'p', rows:[
+  ['Stage I','CGCAT online examination','—','—'],
+  ['Stage II','Preliminary Selection Board','—','—'],
+  ['Stage III','Final Selection Board','—','—'],
+  ['Stage IV','Medical examination','—','—'],
+  ['Stage V','Induction','—','INA Ezhimala']
+ ]},
+ syllabus:{src:'u', items:[['CGCAT','Mathematics, physics, English, reasoning and general knowledge at Class XII / graduate level. The Maths and Physics content is why the subject gate exists.']]},
+ ranks:{src:'u', rows:[['Selected','Assistant Commandant — Group A gazetted officer'],['Progression','Assistant Commandant → Deputy Commandant → Commandant (JG) → Commandant']]}
+},
+
+/* ============ RAJASTHAN ============ */
+{
+ id:'ras', name:'RAS / RTS — State &amp; Subordinate Services', org:'RPSC', sector:['Rajasthan'], src:'p',
+ verdict:'go', status:'exam',
+ tag:'Home state, 607 posts, and an age limit that runs to 40',
+ facts:{'Prelims':'6 Dec 2026','Vacancies':'607','Age':'21–40'},
+ kv:[['Advertisement','<b>Advt. No. 02/2026-27</b>, issued 27 May 2026 (full number 02/02 Exam/RAS&amp;RTS/RPSC/EP-1/2026-27)'],['Vacancies','<b>607</b> — 192 State Services + 415 Subordinate Services'],['Applications','4 June – 3 July 2026 — <b>closed</b>'],['<b>Prelims</b>','<b>6 December 2026</b>'],['Age','21–40 — <b>you have many attempts</b>, unlike UPSC\'s six'],['Degree','Any bachelor\'s degree'],['Domicile','You are Rajasthan-domiciled, so you keep reservation and relaxations. Out-of-state candidates may apply under UR'],['Language','Working knowledge of Hindi in Devnagari script and knowledge of Rajasthani culture are examined'],['Next cycle','Previous advertisements: 13/2024-25 (2 Sep 2024), 02/2023-24 (28 June 2023) — so plausibly mid-2027']],
+ why:'The best long game in this atlas for you. Home city, 607 posts, and an age ceiling seventeen years away — you can attempt it repeatedly while doing other things.',
+ applicants:{n:'RAS cycles typically draw 4–6 lakh applications', src:'u'},
+ pattern:{src:'u', rows:[
+  ['Prelims','General Knowledge and General Science — single objective paper, 150 questions','200 marks','3 hrs · −1/3 · <b>qualifying only</b>'],
+  ['Mains Paper I','General Studies I','200 marks','3 hrs'],
+  ['Mains Paper II','General Studies II','200 marks','3 hrs'],
+  ['Mains Paper III','General Studies III','200 marks','3 hrs'],
+  ['Mains Paper IV','General Hindi and General English','200 marks','3 hrs'],
+  ['Interview','Personality and viva voce','100 marks','—'],
+  ['Merit','Mains 800 + Interview 100 = 900','—','Prelims marks not counted']
+ ]},
+ syllabus:{src:'u', items:[
+  ['Prelims','History, art, culture, literature, tradition and heritage of Rajasthan; Indian history; world and Indian geography; <b>geography of Rajasthan</b>; Indian polity and governance; <b>Rajasthan polity and administration</b>; economy of India and Rajasthan; science and technology; reasoning and mental ability; current affairs.'],
+  ['Mains GS I','History and culture of Rajasthan, India and the world; economics and Indian economy; sociology, management, accounting and auditing.'],
+  ['Mains GS II','Administrative ethics; general science and technology; earth science; Indian and Rajasthan polity and administration.'],
+  ['Mains GS III','General Hindi and English at graduate level; behaviour; law; management.'],
+  ['CSE advantage','<b>The science and technology component is substantial and you already know it.</b> Rajasthan-specific content is the part you must build from scratch.']
+ ]},
+ ranks:{src:'u', note:'Indicative ordering of preference within the 607 posts.', rows:[
+  ['Top merit','<b>RAS</b> — Rajasthan Administrative Service, State Service, gazetted'],
+  ['High merit','<b>RPS</b> — Rajasthan Police Service (has physical and medical standards)'],
+  ['High merit','Rajasthan Accounts Service, Rajasthan Commercial Taxes Service'],
+  ['Mid merit','Rajasthan Cooperative Service, Rajasthan Industries Service, Rajasthan Tourism Service'],
+  ['Subordinate (415 posts)','Tehsildar, Deputy Superintendent of Police, Block Development Officer, District Commandant Home Guards, and other subordinate-service posts']
+ ]}
+},
+{
+ id:'rpscprog', name:'Programmer', org:'RPSC — IT&amp;C Department, Rajasthan', sector:['Rajasthan','CSE-native'], src:'u',
+ verdict:'go', status:'watch',
+ tag:'The best state fit for a CSE degree — but there is no live advertisement',
+ facts:{'Status':'No 2026-27 advt','Age':'21–40','Basic after probation':'₹44,300'},
+ kv:[['<b>Current status</b>','<b>No Programmer advertisement exists in the RPSC 2026-27 series.</b> The 216-post figure circulating online is the 2024 cycle'],['2026-27 series in full','01 School Lecturer (Special Education) · 02 RAS/RTS · 03 Asst Prosecution Officer · 04 Sr Scientific Officer · 05 corrigendum to Asst Engineer 2024. Verified live on the RPSC advertisements page'],['Degree','B.E./B.Tech in Computer Science, IT or Electronics &amp; Communication; or MCA; or M.Sc in CS/IT; or M.Tech in a relevant discipline'],['Age','21–40'],['Pay','≈₹31,100/month during the 2-year probation, then basic <b>₹44,300</b>'],['Language','Working knowledge of Hindi in Devnagari and knowledge of Rajasthani culture required'],['Selection','Written test (Paper 1 and Paper 2, same day) → document verification → medical']],
+ why:'Gazetted, in your home city, and explicitly names your degree. Worth a standing watch on rpsc.rajasthan.gov.in — this is the single Rajasthan post best matched to your qualification.',
+ applicants:{n:'Not verified', src:'u'},
+ pattern:{src:'u', rows:[
+  ['Paper I','Computer science subject paper','—','same day'],
+  ['Paper II','Computer science subject paper','—','same day'],
+  ['Then','Document verification, medical','—','—']
+ ]},
+ syllabus:{src:'u', items:[
+  ['Typical coverage','Data structures and algorithms; DBMS and SQL; operating systems; computer networks; software engineering; programming in C, C++, Java; web technologies; data communication; information systems and cyber security; computer organisation.'],
+  ['Plus','Rajasthan general knowledge and Hindi are commonly examined in state technical papers — verify against the notification when it appears.']
+ ]},
+ ranks:{src:'u', rows:[['Selected','Programmer, Department of Information Technology &amp; Communication, Government of Rajasthan — gazetted'],['Progression','Programmer → Senior Programmer → Assistant Director / Deputy Director']]}
+},
+{
+ id:'rpscother', name:'Assistant Engineer &amp; Sub Inspector', org:'RPSC', sector:['Rajasthan','Police/CAPF'], src:'p',
+ verdict:'cond', condition:'No new advertisement for either in 2026-27', status:'watch',
+ tag:'Both streams are between cycles',
+ facts:{'AE':'Corrigendum only','SI 2025':'1,015 posts','New advt':'None'},
+ kv:[['Assistant Engineer','Advt 05/2026-27 dated 2 June 2026 is a <b>corrigendum to the Assistant Engineer 2024 examination</b>, not a fresh recruitment. Whether the AE cadre includes a Computer Science stream was not verified'],['Sub Inspector','Most recent is <b>Advt 05/2025-26 dated 17 July 2025 — 1,015 posts</b> (951 SI + 64 Platoon Commander, RAC). Applications ran 10 Aug – 8 Sep 2025'],['SI cycle is live','Corrigendum 06/2026-27 dated 2 June 2026 exists; written exam was scheduled 5–6 April 2026 and PET admit cards issued during 2026. <b>No new 2026 advertisement</b> means no fresh notification, not a dormant stream'],['Important','Rajasthan <b>Sub Inspector</b> is run by RPSC. Rajasthan <b>Constable</b> is run by Rajasthan Police — different bodies'],['Not verified','Physical standards, medical standards, salary and General cutoffs for RPSC SI']],
+ why:'Both are worth a watch rather than a plan. AE in particular may or may not admit CSE — that needs the notification.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'cet', name:'CET — Graduation Level', org:'RSSB (Rajasthan Staff Selection Board)', sector:['Rajasthan','Gateway'], src:'p',
+ verdict:'go', status:'exam',
+ tag:'A qualifying gateway, not a job — and you missed this year\'s window',
+ facts:{'Exam':'1–3 Dec 2026','Applications':'Closed 2 Aug','Age':'18–40'},
+ kv:[['What it is','<b>Qualifying only.</b> Clearing CET does not recruit you — it makes you eligible to apply for a block of Rajasthan graduate-level posts'],['2026 cycle','Notification 2 July 2026 · applications 4 July – <b>2 Aug 2026, closed</b> · <b>offline OMR exam 1–3 December 2026</b>'],['Age','18–40 as on 1 January 2027'],['Portal','Rajasthan SSO Portal'],['Gated posts','Patwari, Junior Accountant, Village Development Officer, Supervisor, Sub-Jailer, Hostel Superintendent, Platoon Commander — each still needs a separate application'],['Consequence of missing it','The 10,644-post Clerk Grade-II drive was restricted to CET Senior Secondary qualified candidates. Missing a CET cycle locks you out of the whole gated block until the next one']],
+ warn:'<b>Put next year\'s CET application window in your calendar now.</b> It opens around July. Missing it twice would be the single most expensive scheduling mistake available to you in Rajasthan.',
+ why:'Structurally important even though it recruits nobody directly. It is the key to a large block of state posts.',
+ applicants:{n:'Rajasthan CET cycles draw well over 10 lakh candidates', src:'u'},
+ pattern:{src:'u', rows:[['Mode','<b>Offline OMR</b>','—','1–3 Dec 2026'],['Nature','Objective, qualifying','—','—']]},
+ syllabus:{src:'u', items:[['Coverage','Rajasthan history, art, culture and geography; Indian and Rajasthan polity and economy; world and Indian geography; general science; current affairs; reasoning and mental ability; basic computer knowledge; <b>Hindi and English</b>.'],['CSE advantage','The computer-knowledge component is free marks. The Rajasthan-specific and Hindi components are the real work.']]},
+ ranks:{src:'u', rows:[['Qualified','No post follows automatically. You then apply separately to each CET-gated recruitment as it is advertised']]}
+},
+{
+ id:'rssbit', name:'Informatics Assistant &amp; Computer Instructor', org:'RSSB', sector:['Rajasthan','CSE-native'], src:'p',
+ verdict:'go', status:'watch',
+ tag:'The two genuinely CSE-facing RSSB streams',
+ facts:{'Comp Instructor':'3,951 posts (2026)','Exam sat':'22 Aug 2026','Informatics Asst':'Recurring'},
+ kv:[['Computer Instructor','<b>Advt 07/2026 — 3,951 Senior and Basic Computer Instructor posts.</b> Applications 25 May – 23 June 2026 · exam sat 22 August 2026'],['Informatics Assistant','A distinct recurring RSSB stream, confirmed on the official exam-name index. No live 2026 advertisement confirmed'],['Why these two','Of all the RSSB streams, only these are genuinely computer-science facing. <b>JEN excludes CSE and "Computor" is a Statistics Department post</b>'],['Body','Rajasthan Staff Selection Board, State Institute of Agriculture Management premises, Durgapura, Jaipur 302018'],['Domain note','Both rssb.rajasthan.gov.in and the legacy rsmssb.rajasthan.gov.in remain live'],['Real barrier','Not domicile — you have that. It is CET qualification plus Hindi Devnagari and Rajasthani culture content']],
+ why:'Modest pay compared with the central routes, but genuinely computing work in your own city, with a large intake.',
+ applicants:{n:'Rajasthan non-gazetted drives routinely draw several lakh applicants', src:'u'},
+ pattern:{src:'u', rows:[['Written','Objective paper — computer subject plus Rajasthan GK, Hindi and reasoning','—','—'],['Then','Document verification','—','—']]},
+ syllabus:{src:'u', items:[['Computer component','Computer fundamentals, operating systems, MS Office, DBMS basics, networking basics, internet, programming fundamentals, information security basics.'],['Rajasthan component','History, culture, geography, polity and economy of Rajasthan; Hindi in Devnagari; general reasoning.']]},
+ ranks:{src:'u', rows:[['Senior Computer Instructor','Higher grade of the two'],['Basic Computer Instructor','Entry grade'],['Informatics Assistant','Non-gazetted, IT support and data roles across departments']]}
+},
+{
+ id:'rssbno', name:'Junior Engineer &amp; Computor', org:'RSSB', sector:['Rajasthan'], src:'p',
+ verdict:'no', condition:'JEN is Civil/Mechanical/Electrical only. "Computor" is a Statistics Department post, not a computing one.', status:'closed',
+ tag:'Two Rajasthan traps that catch CSE graduates every year',
+ facts:{'JEN 2026':'874 posts','JEN closes':'14 Sep 2026','Both':'Not for CSE'},
+ kv:[['<b>RSSB JEN 2026</b>','<b>874 posts, applications close 14 September 2026 — and CSE is not a notified discipline.</b> The drive is Civil, Mechanical and Electrical for PWD, WRD and PHED. Do not pay the fee'],['<b>Computor</b>','<b>The name is not a misspelling of "Computer."</b> It is the Rajasthan Statistics Department post name, and conventionally requires a degree with Mathematics, Statistics or Economics — not Computer Science'],['Why they are here','Both appear constantly in "Rajasthan jobs for B.Tech" lists. Both are wrong for you']],
+ why:'Named explicitly so you do not lose a fee and a Sunday to either.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+
+/* ============================================================
+   NOT RESEARCHED THIS SESSION — catalogued so the map is
+   complete, but every figure below is background knowledge at
+   low confidence, NOT a verified 2026 finding. Marked 'gap'.
+   ============================================================ */
+{
+ id:'rrbntpc', name:'NTPC — Graduate Level', org:'RRB (Railway Recruitment Boards)', sector:['Railways'], src:'u',
+ verdict:'go', status:'gap',
+ tag:'Probably the largest single vacancy pool in India outside SSC — and entirely unresearched here',
+ facts:{'Coverage':'NOT RESEARCHED','Degree':'Any bachelor\'s','Scale':'Very large'},
+ kv:[['<b>Status of this entry</b>','<b>Not researched this session.</b> No RRB page was fetched. Everything below is background knowledge that must be verified against the live notification'],['Degree','Any bachelor\'s degree — your CSE qualifies but confers no advantage'],['Age','Roughly 18–33 for General, though RRB has applied varying relaxations in recent cycles'],['Scale','Recent graduate-level cycles have run into five figures of posts. Applicant volumes are extreme — cycles have drawn well over a crore of applications'],['Posts','Station Master, Goods Train Manager, Junior Accounts Assistant cum Typist, Senior Clerk cum Typist, Traffic Assistant, Commercial cum Ticket Clerk'],['Selection','CBT-1 → CBT-2 → typing skill test or aptitude test (post-dependent) → document verification → medical'],['<b>To verify</b>','rrbapply.gov.in and the individual RRB zone sites — vacancies, age band, current cycle status']],
+ why:'Named because omitting it would misrepresent the landscape. On raw vacancy count this may be the single biggest opportunity available to you, and this atlas has nothing verified on it.',
+ applicants:null, pattern:null, syllabus:null,
+ ranks:{src:'u', note:'Indicative preference ordering only — not verified.', rows:[
+   ['Highest preference','Station Master — Level 6'],
+   ['High','Goods Train Manager (formerly Goods Guard) — Level 5'],
+   ['Mid','Junior Accounts Assistant cum Typist, Senior Clerk cum Typist — Level 5'],
+   ['Lower','Commercial cum Ticket Clerk, Traffic Assistant — Level 3–4']
+ ]}
+},
+{
+ id:'rrbje', name:'Junior Engineer — including JE (IT)', org:'RRB', sector:['Railways','CSE-native'], src:'u',
+ verdict:'cond', condition:'CSE is eligible only for the JE (IT) / Information Technology posts, not the general JE pool', status:'gap',
+ tag:'Unlike SSC JE and RSSB JEN, Railways does run an IT stream a CSE graduate can enter',
+ facts:{'Coverage':'NOT RESEARCHED','CSE route':'JE (IT) only','Degree':'B.Tech CSE/IT'},
+ kv:[['<b>Status of this entry</b>','<b>Not researched this session.</b> Verify everything below'],['Why it matters','This is the one Junior Engineer family where <b>Computer Science is genuinely notified</b> — as Junior Engineer (Information Technology). SSC JE and RSSB JEN both exclude CSE; RRB does not'],['Degree','B.Tech/B.E. or diploma in Computer Science / IT for the JE(IT) post — exact wording varies by cycle'],['Age','Roughly 18–33 for General'],['Selection','CBT-1 → CBT-2 → document verification → medical'],['<b>To verify</b>','The discipline table in the live RRB JE notification at rrbapply.gov.in — confirm JE(IT) is included in that cycle']],
+ why:'The most promising unresearched item in this atlas for your specific degree. Worth checking before anything else in the Railways block.',
+ applicants:null, pattern:null, syllabus:null, ranks:{src:'u', rows:[['Selected','Junior Engineer (IT) — Pay Level 6'],['Progression','JE → Senior Section Engineer → Assistant Divisional Engineer']]}
+},
+{
+ id:'rrbrest', name:'ALP, Technician, RPF SI, Section Controller, Metro', org:'RRB / RPF / DMRC / JMRC', sector:['Railways','Police/CAPF'], src:'u',
+ verdict:'cond', condition:'Mixed — some are below your qualification, RPF SI has physical standards', status:'gap',
+ tag:'The rest of the railway family, none of it verified',
+ facts:{'Coverage':'NOT RESEARCHED','ALP/Technician':'Diploma/ITI level','RPF SI':'Graduate + physical'},
+ kv:[['<b>Status</b>','<b>Not researched this session.</b>'],['ALP (Assistant Loco Pilot)','Diploma or ITI level — generally below a B.Tech, though B.Tech holders have been permitted in some cycles. Verify'],['Technician','Grade I Signal has historically taken B.Sc or engineering diploma holders; Grade III is ITI level'],['RPF Sub Inspector','Any bachelor\'s degree, plus physical standards and PET. A genuine graduate-level uniformed route'],['Section Controller','Graduate-level, recruited from within and directly in some cycles'],['Metro — DMRC, JMRC','Delhi Metro and Jaipur Metro run their own drives. <b>JMRC is in your city</b> and worth a standing watch'],['<b>To verify</b>','rrbapply.gov.in, rpf.indianrailways.gov.in, delhimetrorail.com, transport.rajasthan.gov.in/jmrc']],
+ why:'JMRC in particular is a Jaipur-local employer this research never touched.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'licaao', name:'AAO — including the IT / Specialist stream', org:'LIC', sector:['Insurance'], src:'u',
+ verdict:'go', status:'gap',
+ tag:'LIC runs a dedicated IT specialist stream — unresearched, and a likely fit',
+ facts:{'Coverage':'NOT RESEARCHED','IT stream':'Exists','Age':'~21–30'},
+ kv:[['<b>Partly verified</b>','licindia.in/careers <b>was fetched</b> and lists a live notification titled <b>"Recruitment of AAO Generalists / Specialists / Assistant Engineers 2025"</b> — confirming the specialist and engineering streams exist. Vacancy counts, age limits and dates were not readable from the page'],['Why it matters','LIC AAO runs a <b>Specialist / Assistant Engineer stream</b> alongside the generalist one — one of the better CSE-facing insurance routes'],['Age','Roughly 21–30 for General'],['Degree','Bachelor\'s in any discipline for the generalist stream; CS/IT engineering for the IT specialist stream'],['Selection','Prelims → Mains → interview, plus a pre-recruitment medical'],['Also unresearched','LIC ADO (Apprentice Development Officer) and LIC Assistant'],['<b>To verify</b>','licindia.in careers — whether an IT stream is notified in the current cycle, and the vacancy split']],
+ why:'Pay and stability comparable to public-sector banking, with a CSE-specific door. This atlas has nothing verified on it.',
+ applicants:null, pattern:null, syllabus:null, ranks:{src:'u', rows:[['Selected','Assistant Administrative Officer — officer cadre'],['Progression','AAO → ADM → AD → Senior Divisional Manager']]}
+},
+{
+ id:'genins', name:'NICL, UIIC, OICL AO and GIC Re Scale I', org:'Public-sector general insurers', sector:['Insurance'], src:'u',
+ verdict:'go', status:'gap',
+ tag:'The general-insurance block, none of it verified',
+ facts:{'Coverage':'NOT RESEARCHED','Degree':'Any bachelor\'s','Pattern':'Banking-style'},
+ kv:[['<b>Status</b>','<b>Not researched this session.</b>'],['Bodies','National Insurance, United India Insurance, Oriental Insurance, General Insurance Corporation of India (GIC Re), Agriculture Insurance Company'],['Degree','Graduation in any discipline for generalist AO; some cycles notify IT specialist posts'],['Age','Typically 21–30'],['Pattern','Prelims → Mains → interview, on the same aptitude base as banking — so it costs only a form once you are preparing IBPS'],['Frequency','Irregular. These insurers do not recruit every year'],['<b>To verify</b>','nationalinsurance.nic.co.in, uiic.co.in, orientalinsurance.org.in, gicre.in']],
+ why:'Cheap add-ons to a banking preparation, but genuinely irregular — you cannot plan around them.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'post', name:'India Post, DoT JTO, BSNL', org:'Dept of Posts / Dept of Telecommunications / BSNL', sector:['Postal/Telecom'], src:'u',
+ verdict:'cond', condition:'Mixed levels — Postal Assistant is 12th-level; JTO is engineering-level', status:'gap',
+ tag:'Telecom JTO is the engineering-grade route here',
+ facts:{'Coverage':'NOT RESEARCHED','JTO':'Engineering degree','PA/SA':'12th level'},
+ kv:[['<b>Status</b>','<b>Not researched this session.</b>'],['Postal Assistant / Sorting Assistant','12th-level qualification — below your degree. Recruited via SSC CHSL in recent years'],['Inspector of Posts','Graduate-level, recruited through SSC CGL — already covered in the CGL entry'],['GDS (Gramin Dak Sevak)','10th-pass, merit-based on Class X marks, no exam. Far below your qualification'],['<b>DoT / BSNL JTO</b>','<b>Junior Telecom Officer requires an engineering degree</b>, historically including Computer Science/IT streams. This is the engineering-grade route in this block'],['Caveat','BSNL recruitment has been sporadic given its financial position — verify whether any cycle is live'],['<b>To verify</b>','indiapost.gov.in, dot.gov.in, bsnl.co.in careers']],
+ why:'JTO is the only part of this block that matches your qualification. The rest is below it.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'teach', name:'KVS, NVS, DSSSB, CTET, REET', org:'Education sector', sector:['Teaching'], src:'u',
+ verdict:'cond', condition:'Most teaching posts require B.Ed, which you do not have. Computer Instructor posts are the exception.', status:'gap',
+ tag:'Largely blocked by B.Ed — with one CSE-shaped exception',
+ facts:{'Coverage':'NOT RESEARCHED','Blocker':'B.Ed for most posts','Exception':'Computer Instructor'},
+ kv:[['<b>Status</b>','<b>Not researched this session.</b>'],['<b>Why mostly closed</b>','TGT and PGT posts require <b>B.Ed</b>. CTET and REET are eligibility tests that themselves generally require B.Ed or D.El.Ed. <b>You are not currently eligible for these</b>'],['What would unlock it','A 2-year B.Ed, after which CTET/REET plus DSSSB/KVS/NVS PGT Computer Science becomes available'],['<b>The exception</b>','<b>Computer Instructor posts</b> at KVS, NVS and in state cadres often require only a B.Tech CSE / MCA / B.Sc CS — no B.Ed. Rajasthan\'s own Computer Instructor drive (3,951 posts) is already catalogued in this atlas'],['DSSSB','Runs TGT/PGT Computer Science for Delhi schools — B.Ed generally required for PGT. <b>dsssb.delhi.gov.in was fetched and shows a live "Vacancy Notice / Advertisement No. 03/2026"</b> covering various posts under post codes 21/26 and 45/26, but the post list was not readable from the homepage. Check dsssbonline.nic.in'],['Polytechnic lecturer','Usually requires M.Tech — not currently open to you'],['<b>To verify</b>','kvsangathan.nic.in, navodaya.gov.in, dsssb.delhi.gov.in']],
+ why:'Included so you know precisely which door is shut and what would open it. B.Ed is the single qualification that would most expand your eligibility in this sector.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'courts', name:'Supreme Court, High Courts, eCourts technical posts', org:'Judiciary — non-law posts', sector:['Courts','CSE-native'], src:'u',
+ verdict:'go', status:'gap',
+ tag:'Courts hire programmers, and almost nobody looks — including this research',
+ facts:{'Coverage':'NOT RESEARCHED','Posts':'Programmer, System Assistant','LLB':'Not required'},
+ kv:[['<b>Partly verified</b>','hcraj.nic.in/hcraj/recruitment.php <b>was fetched</b> and its recruitment list includes <b>"System Assistant, 2023"</b> — confirming the Rajasthan High Court does run technical IT recruitment. Also listed: Legal Researcher 2026, Junior Personal Assistant 2023. Vacancies, qualifications and dates were not readable from the index page'],['Why it matters','The Supreme Court and High Courts recruit <b>Assistant Programmer, Programmer, Senior Programmer and System Assistant</b> — technical posts with <b>no LLB requirement</b>. Central-government pay, very low applicant volumes'],['<b>Rajasthan High Court</b>','<b>Confirmed to recruit System Assistant</b> — in your own state. Standing watch at hcraj.nic.in. e-Services helpline for Jaipur: 7023103127'],['eCourts','The national eCourts project has generated technical and systems posts across district judiciary'],['Why overlooked','These never appear in coaching lists because they are small, irregular and advertised on court websites rather than exam portals'],['<b>To verify</b>','sci.gov.in, hcraj.nic.in, ecourts.gov.in, district court sites']],
+ why:'Among the highest-value unresearched items for your degree: your qualification is the requirement, the field is tiny, and the Rajasthan High Court is local to you.',
+ applicants:null, pattern:null, syllabus:null, ranks:{src:'u', rows:[['Typical ladder','System Assistant → Assistant Programmer → Programmer → Senior Programmer'],['Note','Usually single-post advertisements with a direct written test plus interview, not a rank-to-post allocation']]}
+},
+{
+ id:'municipal', name:'JDA Jaipur, municipal corporations, smart-city SPVs', org:'Urban local bodies, Rajasthan and elsewhere', sector:['Municipal'], src:'u',
+ verdict:'cond', condition:'Irregular, small, and often contractual rather than permanent', status:'gap',
+ tag:'Local to you, and completely unresearched',
+ facts:{'Coverage':'NOT RESEARCHED','Local body':'JDA Jaipur','Nature':'Often contractual'},
+ kv:[['<b>Status</b>','<b>Not researched this session.</b>'],['<b>JDA</b>','Jaipur Development Authority — recruits technical, IT and engineering staff, in your own city'],['Municipal corporations','Nagar Nigam Jaipur Heritage and Jaipur Greater run their own drives, often through RSSB'],['Smart City SPVs','Jaipur Smart City Limited and equivalents hire IT and systems staff — frequently on contract or deputation rather than permanent cadre'],['State corporations','JVVNL, RVUNL, RVPN (Rajasthan power utilities) run Technical Helper, JEN and AEN drives — <b>these were not verified, and whether any admits CSE is unknown</b>'],['<b>To verify</b>','jda.rajasthan.gov.in, jaipurmc.org, energy.rajasthan.gov.in, rssb.rajasthan.gov.in']],
+ why:'Geographically the closest opportunities to you and the least documented. The contractual-versus-permanent distinction matters a great deal here — check before applying.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'statepsc', name:'Other state PSCs and state technical services', org:'UPPSC, BPSC, MPPSC, GPSC, TNPSC and the rest', sector:['Other States'], src:'u',
+ verdict:'cond', condition:'You may apply as an out-of-state candidate to most, forfeiting reservations you do not have anyway', status:'gap',
+ tag:'Open to you, and higher age ceilings than anything central',
+ facts:{'Coverage':'PARTLY RESEARCHED','Age ceilings':'35–44','Hard domicile':'3 states only'},
+ kv:[['<b>Status</b>','Only the <b>domicile question</b> was researched. Vacancies, dates, patterns and CSE-specific technical posts were not'],['<b>Domicile</b>','Most state PCS exams are formally open to residents of any state, so you may apply as an "other state" candidate. <b>You forfeit OBC/SC/ST relaxations — which you have none of, so you lose nothing</b>'],['<b>Hard domicile</b>','<b>TNPSC, JKPSC and Kerala PSC</b> impose a genuine domicile requirement'],['CGPSC','Caps non-domicile candidates at <b>30 years</b>, unlike its own domicile candidates'],['Age ceilings','General upper limits run roughly <b>35 to 44</b> — far above UPSC\'s 32. TGPSC highest at 44; APPSC and HPSC at 42'],['Age reference dates','UPPSC and TNPSC as on 1 July · BPSC as on 1 August · most others as on 1 January'],['Attempts','<b>Most state PSCs allow unlimited attempts.</b> Only MPSC, KPSC (Karnataka) and JKPSC impose caps — versus 6 at UPSC'],['Unresearched','Every state\'s Assistant Engineer, Programmer, Assistant Programmer and Technical Officer stream — these are where a CSE degree counts, and none was checked'],['<b>To verify</b>','Each state PSC site individually']],
+ why:'The age and attempt arithmetic here is genuinely favourable to you and almost nobody exploits it. The state-level Programmer and Assistant Programmer posts are the unexamined CSE opportunity.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'epfo', name:'EPFO and ESIC', org:'Labour ministry bodies', sector:['Overlooked'], src:'u',
+ verdict:'go', status:'gap',
+ tag:'Graduate-level, well paid, and consistently overlooked',
+ facts:{'Coverage':'NOT RESEARCHED','Degree':'Any bachelor\'s','Route':'UPSC and SSC both'},
+ kv:[['<b>Status</b>','<b>Fetch attempted and failed.</b> epfindia.gov.in redirects to epfo.gov.in, whose recruitment page returned <b>HTTP 404</b>; esic.gov.in returned a TLS certificate error. So this is unresearched because the sites could not be read, <b>not</b> because there is nothing there'],['EPFO Enforcement Officer / Accounts Officer','Graduate-level Group B gazetted post, recruited via <b>UPSC</b> in recent cycles. Well regarded and well paid'],['EPFO Social Security Assistant','Graduate-level, recruited directly by EPFO'],['ESIC','Upper Division Clerk, Social Security Officer / Manager Grade II, Insurance Inspector — graduate-level'],['Degree','Any bachelor\'s degree for these posts'],['Why overlooked','Both recruit irregularly and are buried under the SSC/banking noise'],['<b>To verify</b>','epfindia.gov.in, esic.gov.in, upsc.gov.in']],
+ why:'Solid central-government Group B routes on a plain graduate degree, with much smaller applicant fields than CGL.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'cyber', name:'NIC, NIELIT, C-DAC, C-DOT, CERT-In, NTRO, I4C', org:'MeitY and central technical bodies', sector:['Overlooked','CSE-native','PSU/Science'], src:'u',
+ verdict:'go', status:'gap',
+ tag:'The densest concentration of CSE-native government jobs in India — and entirely unresearched',
+ facts:{'Coverage':'NOT RESEARCHED','Fit':'Directly CSE','Priority':'High'},
+ kv:[['<b>Status</b>','<b>Not researched this session.</b> This is the most significant gap in the atlas for your specific degree'],['<b>NIC</b>','National Informatics Centre — <b>Scientist B and Scientific/Technical Officer</b>, recruited in recent years through NIELIT. Runs the government\'s own IT infrastructure'],['<b>NIELIT</b>','Scientist B and Technical Assistant — a recurring CSE-facing central recruiter'],['C-DAC','Centre for Development of Advanced Computing — project engineer and scientist posts, frequently advertised, often contract-to-permanent'],['C-DOT','Centre for Development of Telematics — research engineer posts'],['<b>CERT-In</b>','Indian Computer Emergency Response Team — the national cyber-security agency. Analyst and engineer posts'],['NCIIPC','National Critical Information Infrastructure Protection Centre'],['NTRO','National Technical Research Organisation — technical and scientist posts, cryptology and SIGINT-adjacent'],['I4C','Indian Cybercrime Coordination Centre, MHA — cyber posts'],['STQC','Standardisation Testing and Quality Certification'],['<b>To verify</b>','nic.in, nielit.gov.in, cdac.in, cdot.in, cert-in.org.in, ntro.gov.in']],
+ why:'If you want a government job that actually uses a Computer Science degree day to day, this cluster is where it lives. That the research never reached it is the atlas\'s biggest single omission — treat this as the first target of any follow-up.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'psurest', name:'NTPC, POWERGRID, BHEL, GAIL, SAIL, BEL, HAL, Coal India and the rest', org:'Maharatna / Navratna / Miniratna PSUs', sector:['PSU/Science'], src:'u',
+ verdict:'cond', condition:'Each PSU must actually notify the CS/IT discipline — many do not', status:'gap',
+ tag:'The PSU list you asked about, largely unchecked',
+ facts:{'Coverage':'NOT RESEARCHED','Key question':'Does it admit CSE?','Route':'Mostly GATE'},
+ kv:[['<b>Status</b>','<b>Not researched this session</b> beyond the general GATE question'],['The bodies','NTPC · POWERGRID · BHEL · GAIL · SAIL · BEL · HAL · Coal India · NHPC · NLC · Oil India · NPCIL · AAI · IRCON · RVNL · NBCC · RITES · EIL · MDL · GRSE · Cochin Shipyard · THDC · SJVN · MECON · BDL · Midhani · PFC · REC · IREDA · NHAI'],['<b>The one question that matters</b>','<b>Does this PSU notify Computer Science / IT in its discipline table?</b> Many GATE-based PSU drives are Mechanical, Electrical, Civil, Instrumentation and E&amp;C only. Some run separate IT/Systems cadres'],['Recruitment method','Mostly GATE score → GD → interview, but <b>not universally</b> — several run their own written tests, and some recruit by interview alone. Verify per PSU'],['AAI','Airports Authority — Junior Executive posts have historically included Electronics and IT streams, plus a separate Air Traffic Control cadre'],['BEL and HAL','Both have recruited CSE for software and systems roles in some cycles'],['<b>To verify</b>','Each PSU\'s own careers page and its latest advertisement PDF']],
+ why:'The atlas verified eight CSE-admitting PSUs from a single secondary source. That list is neither complete nor confirmed — this is the work a follow-up run should do first alongside the MeitY cluster.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'science2', name:'CSIR, IGCAR, NPCIL, SAMEER, IN-SPACe, ICAR, ICMR', org:'Central research bodies', sector:['PSU/Science'], src:'u',
+ verdict:'cond', condition:'CSE eligibility varies sharply by lab and post', status:'gap',
+ tag:'Research-body scientist and technical posts, unverified',
+ facts:{'Coverage':'NOT RESEARCHED','Posts':'Scientist, Technical Officer','Varies':'By lab'},
+ kv:[['<b>Status</b>','<b>Not researched this session.</b>'],['CSIR labs','Around 37 laboratories recruiting Scientist and Technical Assistant posts. <b>CSIR-CDAC, CSIR-4PI and several others run computing-heavy work</b> — but eligibility varies lab by lab'],['IGCAR','Indira Gandhi Centre for Atomic Research — Scientific Officer via the same DAE route as BARC'],['NPCIL','Nuclear Power Corporation — Executive Trainee, historically GATE-routed and reported to admit CSE'],['SAMEER','Society for Applied Microwave Electronics Engineering and Research'],['IN-SPACe','Space-sector regulator, newer body, small recruitment'],['ICAR / ICMR','Agricultural and medical research councils — technical and IT posts exist but the core cadres are domain-specific'],['<b>To verify</b>','csir.res.in, igcar.gov.in, npcil.nic.in, individual lab sites']],
+ why:'Scattered and irregular, but the scientist grades carry good pay and genuine technical work.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'intel', name:'Intelligence Bureau, NIA, CBI, NCRB', org:'Security and investigation agencies', sector:['Police/CAPF','Overlooked'], src:'u',
+ verdict:'cond', condition:'Some routes are direct, some only via SSC CGL, some only by deputation', status:'gap',
+ tag:'Direct recruitment routes unresearched',
+ facts:{'Coverage':'NOT RESEARCHED','IB ACIO':'Direct, graduate','CBI':'Mostly via CGL'},
+ kv:[['<b>Status</b>','<b>Not researched this session.</b>'],['<b>IB ACIO Grade II / Executive</b>','Assistant Central Intelligence Officer — <b>direct recruitment, any bachelor\'s degree</b>, run by the Ministry of Home Affairs. A genuine standalone route, and IB also recruits technical and cyber staff'],['IB Security Assistant','Lower grade, also direct'],['CBI','Sub Inspector is recruited <b>through SSC CGL</b> — already covered in the CGL entry. Deputy SP is via UPSC CSE or promotion'],['NIA','Largely staffed by deputation from other services rather than direct entry'],['NCRB','National Crime Records Bureau — technical and programmer posts exist'],['Note','Verification specifically <b>refused to confirm</b> the existence of a Deputy Central Intelligence Officer (Technical) advertisement under MHA — that claim was refuted, so its status is genuinely unknown, not settled either way'],['<b>To verify</b>','mha.gov.in, ncrb.gov.in, ssc.gov.in']],
+ why:'IB ACIO is the substantive direct route here and it takes any graduate. The technical and cyber posts within IB and NCRB are the CSE-shaped part, and both are unexamined.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+},
+{
+ id:'aai', name:'Junior Executive &amp; Air Traffic Control', org:'Airports Authority of India', sector:['Overlooked','PSU/Science','CSE-native'], src:'p',
+ verdict:'cond', condition:'Confirm Computer Science is in the discipline table of the specific advertisement before applying', status:'next',
+ tag:'976 posts through GATE — the largest GATE-linked intake found anywhere in this atlas',
+ facts:{'Advt 09/2025':'976 posts via GATE','Advt 02/2025':'309 ATC posts','Advt 01/2025':'83 posts'},
+ kv:[['<b>Verified on aai.aero</b>','The AAI recruitment dashboard lists three live advertisement series'],['<b>Advt No. 09/2025/CHQ</b>','<b>976 Junior Executive posts, recruited on GATE 2023, 2024 or 2025 scores</b>'],['Advt No. 02/2025/CHQ','309 posts — <b>Air Traffic Control</b>, a distinct and well-paid career with its own medical standards'],['Advt No. 01/2025/CHQ','83 Junior Executive posts across various disciplines'],['Disciplines','The dashboard names <b>Electronics/IT</b> among the prominent disciplines — <b>but the per-discipline vacancy split and whether "Computer Science" specifically is notified could not be read from the dashboard</b>'],['GATE link','This is a second, independent reason to file GATE 2027 — and note AAI accepts scores up to three years old, so a 2027 score stays usable for later AAI cycles'],['Regions','Northern, Southern, Eastern, Western and North Eastern'],['<b>To verify</b>','Open the individual advertisement PDF on aai.aero — age limit, closing date and the discipline table all vary by advertisement and region'],['Portal','Applications run through DigiAlm']],
+ why:'This was buried in the "overlooked bodies" line of your coverage note and turns out to be one of the largest single opportunities in the whole atlas. 976 posts on a GATE score, from a body almost nobody preparing for CGL looks at.',
+ applicants:{n:'Not verified', src:'u'},
+ pattern:{src:'u', rows:[['Advt 09/2025','GATE score screening → document verification','—','no separate written test'],['Advt 01 and 02/2025','AAI\'s own computer-based test → interview (ATC has additional stages)','—','—'],['ATC','Additional voice test and strict medical including vision','—','—']]},
+ syllabus:{src:'u', items:[['GATE route','No separate syllabus — your GATE CS preparation is the entire technical preparation.'],['AAI own-test route','Discipline-specific technical paper plus general aptitude, English, reasoning and general knowledge.']]},
+ ranks:{src:'u', rows:[['Selected','Junior Executive — E1 grade, officer cadre'],['ATC stream','Junior Executive (Air Traffic Control) — separate cadre with allowances and a distinct progression'],['Progression','Junior Executive → Senior Executive → Assistant General Manager']]}
+},
+{
+ id:'regbodies', name:'UIDAI, BIS, FSSAI, TRAI, NHAI, Election Commission, CCI', org:'Statutory and autonomous bodies', sector:['Overlooked'], src:'u',
+ verdict:'cond', condition:'Highly variable — some need domain qualifications, some take any graduate, some take engineers specifically', status:'gap',
+ tag:'The long tail of statutory bodies, none of it checked',
+ facts:{'Coverage':'NOT RESEARCHED','Nature':'Small, irregular','Fields':'Tiny'},
+ kv:[['<b>Status</b>','<b>Fetch attempted and failed.</b> uidai.gov.in/en/careers.html returned <b>HTTP 404</b>; bis.gov.in served a careers page whose advertisement list was not in the returned content. Unreadable, not empty'],['<b>UIDAI</b>','Aadhaar authority — technical and systems posts, a natural CSE fit. Often filled on deputation, which limits direct entry'],['<b>BIS</b>','Bureau of Indian Standards — <b>Scientist B and Technical Assistant posts, engineering degree required</b>. One of the better-regarded overlooked routes'],['AAI','<b>Now catalogued as its own entry — 976 GATE-based posts confirmed.</b> See the Airports Authority of India row'],['TRAI, CCI','Telecom and competition regulators — small, mostly experienced or deputation-based intake'],['FSSAI','Food safety — core posts are food-science domain, but administrative and IT posts exist'],['NHAI','Highways authority — largely Civil engineering'],['Election Commission','Administrative and technical posts, irregular'],['Why they matter','Applicant fields here are a fraction of SSC/banking volumes. The odds per applicant are far better; the problem is that cycles are rare and unpredictable'],['<b>To verify</b>','Each body\'s own careers page']],
+ why:'Individually minor, collectively a real opportunity — precisely because nobody watches them. BIS and AAI are the two most worth a standing check for an engineer.',
+ applicants:null, pattern:null, syllabus:null, ranks:null
+}
+];
+
+/* ---------- structured metrics ----------
+   Sortable numbers extracted from the prose above. Kept as a keyed
+   map so the 46 entries stay untouched. Rules:
+   v.n   total advertised posts. v.cse = CS-specific subset where known.
+         v.stale = figure is from a past cycle, no live advertisement.
+   pay   7th CPC pay-matrix ENTRY CELL for the post's level (L6 35400,
+         L7 44900, L8 47600, L10 56100, L11 67700, L12 78800, L13 123100),
+         or the figure named in the notification. BASIC, never in-hand.
+   d     next dated milestone. act=you can act on it. est=estimated.
+   null  means genuinely unknown — sorted last, never guessed.        */
+const METRICS = {
+  gate27:{v:{n:null,note:'gateway exam, no posts'}, pay:null, d:{iso:'2026-09-27',kind:'applications close',act:true}},
+  isro:{v:{n:175,cse:21,note:'2026'}, pay:{basic:56100,level:10}, d:{iso:'2026-09-16',kind:'applications close',act:true}},
+  cse:{v:{n:933,note:'2026, "approximately"'}, pay:{basic:56100,level:10}, d:{iso:'2027-01-13',kind:'notification',act:true}},
+  capf:{v:{n:432,note:'2025 cycle',stale:true}, pay:{basic:56100,level:10}, d:{iso:'2027-03-15',kind:'notification',act:true,est:true}},
+  cds:{v:{n:null}, pay:{basic:56100,level:10}, d:{iso:'2026-12-15',kind:'CDS (I) notification',act:true,est:true}},
+  ese:{v:{n:167,note:'2027 — you are ineligible'}, pay:{basic:56100,level:10}, d:{iso:'2026-10-06',kind:'applications close',act:false}},
+  ora:{v:{n:34,note:'Advt 10/2026',stale:true}, pay:{basic:56100,level:10}, d:null},
+  cgl:{v:{n:12256,note:'2026'}, pay:{basic:44900,level:7}, d:{iso:'2026-12-01',kind:'Tier-2 exam',act:false,est:true}},
+  cpo:{v:{n:null}, pay:{basic:35400,level:6}, d:null},
+  sscmisc:{v:{n:null}, pay:null, d:null},
+  sebi:{v:{n:22,note:'2025 IT stream',stale:true}, pay:{basic:62500}, d:null},
+  rbi:{v:{n:60,note:'2026 — only 16 UR'}, pay:{basic:78450}, d:{iso:'2027-04-29',kind:'notification',act:true,est:true}},
+  ibpsso:{v:{n:null}, pay:{basic:48480}, d:{iso:'2026-11-01',kind:'Mains exam',act:false}},
+  ibpspo:{v:{n:7565,note:'2026'}, pay:{basic:48480}, d:{iso:'2026-10-04',kind:'Mains exam',act:false}},
+  ibpsrest:{v:{n:null}, pay:null, d:{iso:'2026-10-10',kind:'IBPS Clerk prelims',act:false}},
+  niacl:{v:{n:null,note:'2026 not notified'}, pay:null, d:null},
+  barc:{v:{n:null}, pay:{basic:56100,level:10}, d:{iso:'2026-12-22',kind:'notification',act:true}},
+  psugate:{v:{n:null}, pay:null, d:{iso:'2027-03-19',kind:'GATE result, drives follow',act:true,est:true}},
+  drdorac:{v:{n:33,note:'2026, Scientist C/D/E',stale:true}, pay:{basic:67700,level:11}, d:null},
+  ceptam:{v:{n:764,note:'CEPTAM-11 — below B.Tech',stale:true}, pay:{basic:35400,level:6}, d:null},
+  afcat:{v:{n:null}, pay:{basic:56100,level:10}, d:{iso:'2026-12-01',kind:'AFCAT 1 notification',act:true,est:true}},
+  sscttech:{v:{n:350,note:'68th course, men',stale:true}, pay:{basic:56100,level:10}, d:{iso:'2027-06-01',kind:'notification',act:true,est:true}},
+  icg:{v:{n:170,note:'CGCAT 01/2027',stale:true}, pay:{basic:56100,level:10}, d:{iso:'2027-07-01',kind:'notification',act:true,est:true}},
+  ras:{v:{n:607,note:'2026'}, pay:null, d:{iso:'2026-12-06',kind:'Prelims',act:false}},
+  rpscprog:{v:{n:216,note:'2024 cycle — no live advt',stale:true}, pay:{basic:44300}, d:null},
+  rpscother:{v:{n:1015,note:'SI 2025 cycle',stale:true}, pay:null, d:null},
+  cet:{v:{n:null,note:'qualifying only'}, pay:null, d:{iso:'2026-12-01',kind:'exam 1–3 Dec',act:false}},
+  rssbit:{v:{n:3951,note:'Computer Instructor 2026'}, pay:null, d:null},
+  rssbno:{v:{n:874,note:'JEN 2026 — excludes CSE'}, pay:null, d:{iso:'2026-09-14',kind:'applications close',act:false}},
+  aai:{v:{n:1368,note:'976 GATE + 309 ATC + 83'}, pay:null, d:null},
+  rrbntpc:{v:{n:null}, pay:null, d:null},
+  rrbje:{v:{n:null}, pay:{basic:35400,level:6}, d:null},
+  rrbrest:{v:{n:null}, pay:null, d:null},
+  licaao:{v:{n:null}, pay:null, d:null},
+  genins:{v:{n:null}, pay:null, d:null},
+  post:{v:{n:null}, pay:null, d:null},
+  teach:{v:{n:null}, pay:null, d:null},
+  courts:{v:{n:null}, pay:null, d:null},
+  municipal:{v:{n:null}, pay:null, d:null},
+  statepsc:{v:{n:null}, pay:null, d:null},
+  epfo:{v:{n:null}, pay:null, d:null},
+  cyber:{v:{n:null}, pay:null, d:null},
+  psurest:{v:{n:null}, pay:null, d:null},
+  science2:{v:{n:null}, pay:null, d:null},
+  intel:{v:{n:null}, pay:null, d:null},
+  regbodies:{v:{n:null}, pay:null, d:null}
+};
+EXAMS.forEach(e=>Object.assign(e, METRICS[e.id]||{}));
+
+/* ---------- render ---------- */
+const SECTORS = ['UPSC','SSC','Banking/Regulator','Defence','PSU/Science','Rajasthan','Police/CAPF','Insurance','Railways','Postal/Telecom','Teaching','Courts','Municipal','Other States','Overlooked','Gateway','CSE-native'];
+const FILTERS = [
+  {k:'open', label:'Open now', test:e=>e.status==='open'},
+  {k:'verified', label:'Verified', test:e=>e.status!=='gap'},
+  {k:'gap', label:'Not researched', test:e=>e.status==='gap'},
+  {k:'go', label:'Eligible', test:e=>e.verdict==='go'},
+  {k:'cond', label:'Conditional', test:e=>e.verdict==='cond'},
+  {k:'no', label:'Not eligible', test:e=>e.verdict==='no'},
+  {k:'cse', label:'Uses your CSE', test:e=>e.sector.includes('CSE-native')},
+  ...SECTORS.filter(s=>s!=='CSE-native').map(s=>({k:'s:'+s, label:s, test:e=>e.sector.includes(s)}))
+];
+let active = new Set(), query = '';
+
+const VMAP = {go:['p-go','Eligible'], cond:['p-cond','Conditional'], no:['p-no','Not eligible']};
+const SMAP = {p:['t-p','◆'], s:['t-s','◇'], u:['t-u','○']};
+const esc = s => String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const days = d => Math.ceil((new Date(d+'T23:59:59') - TODAY)/86400000);
+const fmt = n => n.toLocaleString('en-IN');
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function dfmt(iso){ const p = iso.split('-'); return `${+p[2]} ${MON[+p[1]-1]} ${p[0].slice(2)}`; }
+const BIG = 8.64e15;
+const SORTS = {
+  default: null,
+  vac:    (a,b)=>(b.v&&b.v.n!=null?b.v.n:-1)-(a.v&&a.v.n!=null?a.v.n:-1),
+  pay:    (a,b)=>(b.pay&&b.pay.basic||-1)-(a.pay&&a.pay.basic||-1),
+  date:   (a,b)=>(a.d?+new Date(a.d.iso):BIG)-(b.d?+new Date(b.d.iso):BIG),
+  act:    (a,b)=>(a.d&&a.d.act?+new Date(a.d.iso):BIG)-(b.d&&b.d.act?+new Date(b.d.iso):BIG),
+  elig:   (a,b)=>({go:0,cond:1,no:2}[a.verdict]-{go:0,cond:1,no:2}[b.verdict])||a.name.localeCompare(b.name),
+  sector: (a,b)=>a.sector[0].localeCompare(b.sector[0])||a.name.localeCompare(b.name),
+  name:   (a,b)=>a.name.replace(/<[^>]+>/g,'').localeCompare(b.name.replace(/<[^>]+>/g,''))
+};
+let sortKey = 'default';
+
+function strip(){
+  const open = EXAMS.filter(e=>e.status==='open');
+  document.getElementById('openct').textContent = open.length + ' open now';
+  document.getElementById('strip').innerHTML = open.map(e=>{
+    const d = days(e.closes);
+    return `<div class="cell"><div class="n">${d>0?d:'—'}</div><div class="lb">${d>0?'days left':'closed'}</div><div class="nm">${e.name}</div></div>`;
+  }).join('') + `<div class="cell"><div class="n">${EXAMS.length}</div><div class="lb">routes catalogued</div><div class="nm">across 10 sectors</div></div>`;
+}
+
+function chips(){
+  document.getElementById('chips').innerHTML = FILTERS.map(f=>
+    `<button class="chip" data-k="${f.k}" aria-pressed="false">${esc(f.label)}</button>`).join('');
+  document.getElementById('chips').addEventListener('click', ev=>{
+    const b = ev.target.closest('.chip'); if(!b) return;
+    const k = b.dataset.k;
+    if(active.has(k)){ active.delete(k); b.setAttribute('aria-pressed','false'); }
+    else { active.add(k); b.setAttribute('aria-pressed','true'); }
+    render();
+  });
+}
+
+function tbl(p){
+  if(!p) return '';
+  const head = p.rows[0].length===4 ? ['Stage','Content','Marks','Notes'] : ['Stage','Detail'];
+  return `${p.note?`<p style="font-size:.88rem;color:var(--muted);margin:6px 0 0">${p.note}</p>`:''}
+  <div class="tw"><table><thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>
+  ${p.rows.map(r=>`<tr>${r.map((c,i)=>`<td${i>1?' class="mono"':''}>${c}</td>`).join('')}</tr>`).join('')}
+  </tbody></table></div>`;
+}
+
+function card(e){
+  const [vc,vt] = VMAP[e.verdict], [sc,st] = SMAP[e.src];
+  const d = e.closes ? days(e.closes) : null;
+  return `<div class="card" data-id="${e.id}"${e.status==='gap'?' data-gap="1"':''}>
+    <button class="head" aria-expanded="false">
+      <span class="tick ${sc}" title="source confidence">${st}</span>
+      <span>
+        <h3>${e.name}</h3>
+        <div class="org">${e.org}</div>
+        <div class="facts">${Object.entries(e.facts).map(([k,v])=>`${k}: <b>${v}</b>`).join('')}</div>
+      </span>
+      <span class="metrics">
+        <span class="met">
+          <span class="mv ${e.v&&e.v.n!=null?(e.v.stale?'stale':''):'none'}">${e.v&&e.v.n!=null?fmt(e.v.n)+(e.v.stale?'°':''):'—'}</span>
+          <span class="ml">vacancies</span>
+          ${e.v&&e.v.cse?`<span class="sub">${e.v.cse} in CS</span>`:''}
+        </span>
+        <span class="met">
+          <span class="mv ${e.pay&&e.pay.basic?'':'none'}">${e.pay&&e.pay.basic?'₹'+fmt(e.pay.basic):'—'}</span>
+          <span class="ml">basic pay</span>
+          ${e.pay&&e.pay.level?`<span class="sub" style="color:var(--muted)">Level ${e.pay.level}</span>`:''}
+        </span>
+        <span class="met">
+          <span class="mv ${e.d?'':'none'}" style="font-size:.9rem">${e.d?dfmt(e.d.iso):'—'}</span>
+          <span class="ml">${e.d?(e.d.est?'~ ':'')+e.d.kind:'next date'}</span>
+        </span>
+      </span>
+      <span class="rt">
+        ${e.status==='open'?`<span class="pill p-open">${d>0?d+' days left':'closing'}</span>`:''}
+        ${e.status==='gap'?`<span class="pill p-gap">Not researched</span>`:''}
+        <span class="pill ${vc}">${vt}</span>
+        <span class="caret">▸</span>
+      </span>
+    </button>
+    <div class="body">
+      ${e.tag?`<p style="margin:14px 0 0;font-size:1rem;color:var(--ink)"><b>${e.tag}</b></p>`:''}
+      ${e.condition?`<div class="note"><b>Condition:</b> ${e.condition}</div>`:''}
+      ${e.warn?`<div class="note warn">${e.warn}</div>`:''}
+      ${e.why?`<p style="font-size:.95rem;color:var(--ink-soft);margin-top:10px">${e.why}</p>`:''}
+      <div class="grid2">
+        <div class="blk"><h4>Key facts</h4><dl class="kv">${e.kv.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl></div>
+        <div class="blk">
+          ${e.applicants?`<h4>Who you are up against</h4><p>${e.applicants.n} <span class="pill ${e.applicants.src==='p'?'p-go':'p-cond'}" style="margin-left:4px">${e.applicants.src==='p'?'verified':'estimate'}</span></p>`:''}
+          ${e.pattern?`<h4 style="margin-top:${e.applicants?'18px':'0'}">Paper pattern</h4>${tbl(e.pattern)}`:''}
+        </div>
+      </div>
+      ${e.syllabus?`<div class="blk" style="margin-top:18px"><h4>Syllabus</h4>
+        ${e.syllabus.note?`<p style="font-size:.88rem;color:var(--muted)">${e.syllabus.note}</p>`:''}
+        <div class="syl">${e.syllabus.items.map(([h,b])=>`<div><b>${h}</b> — ${b}</div>`).join('')}</div></div>`:''}
+      ${e.ranks?`<div class="blk" style="margin-top:18px"><h4>Which post, at what rank</h4>
+        ${e.ranks.note?`<p style="font-size:.88rem;color:var(--muted)">${e.ranks.note}</p>`:''}
+        <div class="tw"><table><thead><tr><th>Rank / merit</th><th>Post</th></tr></thead><tbody>
+        ${e.ranks.rows.map(r=>`<tr><td class="mono">${r[0]}</td><td>${r[1]}</td></tr>`).join('')}
+        </tbody></table></div></div>`:''}
+    </div>
+  </div>`;
+}
+
+function render(){
+  const q = query.trim().toLowerCase();
+  const out = EXAMS.filter(e=>{
+    for(const k of active){
+      const f = FILTERS.find(x=>x.k===k);
+      if(f && !f.test(e)) return false;
+    }
+    if(!q) return true;
+    return JSON.stringify(e).toLowerCase().includes(q);
+  });
+  if(SORTS[sortKey]) out.sort(SORTS[sortKey]);
+
+  document.getElementById('count').textContent = out.length + ' of ' + EXAMS.length;
+
+  // running totals across whatever is currently shown
+  const withV  = out.filter(e=>e.v && e.v.n!=null);
+  const live   = withV.filter(e=>!e.v.stale);
+  const total  = withV.reduce((s,e)=>s+e.v.n,0);
+  const liveN  = live.reduce((s,e)=>s+e.v.n,0);
+  const csTot  = out.reduce((s,e)=>s+((e.v&&e.v.cse)||0),0);
+  const unknown= out.length - withV.length;
+  const pays   = out.filter(e=>e.pay&&e.pay.basic).map(e=>e.pay.basic);
+  document.getElementById('tally').innerHTML =
+    `<span><b>${fmt(total)}</b> vacancies shown</span>` +
+    `<span>current-cycle <b>${fmt(liveN)}</b></span>` +
+    (csTot?`<span>CS-specific <b>${fmt(csTot)}</b></span>`:'') +
+    (pays.length?`<span class="q">basic pay ₹${fmt(Math.min(...pays))}–₹${fmt(Math.max(...pays))}</span>`:'') +
+    (unknown?`<span class="q">${unknown} route${unknown>1?'s':''} with no published count</span>`:'');
+
+  document.getElementById('list').innerHTML = out.length
+    ? out.map(card).join('')
+    : '<div class="empty">Nothing matches. Clear a filter or change the search.</div>';
+}
+
+document.getElementById('list').addEventListener('click', ev=>{
+  const h = ev.target.closest('.head'); if(!h) return;
+  const c = h.closest('.card');
+  const open = c.classList.toggle('open');
+  h.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+document.getElementById('q').addEventListener('input', e=>{ query = e.target.value; render(); });
+document.getElementById('sort').addEventListener('change', e=>{ sortKey = e.target.value; render(); });
+
+strip(); chips(); render();
+
+/* ---------- live scraped listings ----------
+   Populated by scrape.py via Windows Task Scheduler into data/listings.json.
+   Only works over the local server; in a published artifact the fetch fails
+   and the section says so rather than showing an empty list.               */
+(function(){
+  const stateEl=document.getElementById('liveState'), metaEl=document.getElementById('liveMeta'),
+        listEl=document.getElementById('liveList'),
+        scopeBtn=document.getElementById('liveScope'), newBtn=document.getElementById('liveNew');
+  let feed=null, scope='relevant', newOnly=false;
+
+  const ago=iso=>{
+    const h=Math.round((Date.now()-new Date(iso))/3.6e6);
+    if(h<1) return 'just now';
+    if(h<24) return h+'h ago';
+    const d=Math.round(h/24); return d+' day'+(d>1?'s':'')+' ago';
+  };
+
+  function draw(){
+    if(!feed) return;
+    const today=feed.listings.reduce((m,r)=>r.first_seen>m?r.first_seen:m,'');
+    let rows=feed.listings.filter(r=>r.is_job);
+    if(scope==='relevant') rows=rows.filter(r=>r.tags.length && !r.sub_graduate);
+    if(newOnly) rows=rows.filter(r=>r.first_seen===today);
+    rows.sort((a,b)=>(b.vacancies||0)-(a.vacancies||0)||a.title.localeCompare(b.title));
+
+    listEl.innerHTML = rows.length ? rows.map(r=>`
+      <div class="lrow">
+        <span class="lvac ${r.vacancies?'':'none'}">${r.vacancies?fmt(r.vacancies):'—'}</span>
+        <span>
+          <a href="${r.url}" target="_blank" rel="noopener noreferrer">${r.title}</a>
+          <span class="ltags">
+            ${r.first_seen===today?'<span class="ltag lnew">new</span>':''}
+            ${r.tags.map(t=>`<span class="ltag ${t}">${t}</span>`).join('')}
+            ${r.sub_graduate?'<span class="ltag">below graduate</span>':''}
+          </span>
+        </span>
+        <span class="ltag">${r.sections[0]}</span>
+      </div>`).join('')
+      : '<div class="lempty">Nothing matches. Try “All jobs”, or turn off “New only”.</div>';
+
+    stateEl.textContent = rows.length+' shown';
+    stateEl.className = 'pill '+(rows.length?'p-go':'p-gap');
+  }
+
+  fetch('data/listings.json',{cache:'no-store'})
+    .then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(d=>{
+      feed=d;
+      const jobs=d.listings.filter(r=>r.is_job).length;
+      metaEl.innerHTML=`Scraped from <b>sarkariresult.com.cm</b> · last run <b>${ago(d.fetched_at)}</b> · `
+        +`${d.total_tracked} tracked, ${jobs} vacancies, <b>${d.new_today} new</b> this run · runs daily at 07:30`;
+      draw();
+    })
+    .catch(()=>{
+      stateEl.textContent='offline';
+      metaEl.innerHTML='Live listings need the local server — run <code>python serve.py</code> in the project folder '
+        +'and open <b>localhost:3000</b>. This section stays empty in the published version, which cannot read your local data file.';
+      listEl.innerHTML='';
+    });
+
+  scopeBtn.addEventListener('click',()=>{
+    scope = scope==='relevant' ? 'all' : 'relevant';
+    scopeBtn.textContent = scope==='relevant' ? 'Relevant to me' : 'All jobs';
+    scopeBtn.setAttribute('aria-pressed', scope==='relevant');
+    draw();
+  });
+  newBtn.addEventListener('click',()=>{
+    newOnly=!newOnly;
+    newBtn.setAttribute('aria-pressed',newOnly);
+    draw();
+  });
+})();
+</script>

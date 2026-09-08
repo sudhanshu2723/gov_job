@@ -1,0 +1,46 @@
+name: Daily scrape
+
+on:
+  schedule:
+    # 02:00 UTC = 07:30 IST, matching the local Task Scheduler job.
+    # GitHub queues scheduled runs and can delay them under load, so treat
+    # this as "once a morning", not an exact time.
+    - cron: "0 2 * * *"
+  workflow_dispatch:        # lets you trigger a run by hand from the Actions tab
+
+permissions:
+  contents: write           # needed to commit the refreshed listings back
+
+concurrency:
+  group: scrape             # never let two runs race on the same file
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run scraper
+        run: python scrape.py
+
+      - name: Commit if the listings changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # --quiet exits non-zero when there IS a change; guard so an
+          # unchanged day is a clean pass rather than a red build.
+          if git diff --quiet -- data/listings.json; then
+            echo "No change in listings — nothing to commit."
+          else
+            git add data/listings.json
+            git commit -m "data: refresh listings $(date -u +%Y-%m-%d)"
+            git push
+          fi

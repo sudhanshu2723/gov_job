@@ -1,0 +1,13 @@
+# Personal documents — never publish these
+*.pdf
+application_form_*
+
+# Scraper run log: noisy, regenerated every run, causes merge conflicts in CI
+data/scrape.log
+
+# Local scratch
+_*.html
+_*.js
+*.tmp
+__pycache__/
+.venv/
