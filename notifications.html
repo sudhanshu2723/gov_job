@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notifications · Exam Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/triage.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">Job triage · updated daily</div>
+    <h1>Notifications</h1>
+    <p class="standfirst">New postings from the daily scrape land here. Accept one and it moves to
+      Applied; reject it and it leaves the inbox for good.</p>
+    <nav class="tabs">
+      <a href="index.html">Atlas</a>
+      <a href="notifications.html" aria-current="page">Inbox<span class="n" id="nInbox"></span></a>
+      <a href="applied.html">Applied<span class="n" id="nApplied"></span></a>
+    </nav>
+  </header>
+
+  <div class="controls">
+    <button class="chip" id="fCse" aria-pressed="false">CSE-relevant</button>
+    <button class="chip" id="fNew" aria-pressed="false">New today</button>
+    <span class="meta" id="meta"></span>
+  </div>
+
+  <p class="eyebrow" id="updated" style="margin-bottom:12px"></p>
+
+  <div class="list" id="list"></div>
+
+  <p class="footnote" id="restoreWrap" hidden>
+    <span id="rejCount">0</span> rejected posting(s) are hidden.
+    <button id="restoreBtn" type="button">Restore all</button>
+  </p>
+
+  <div class="undo" id="undo" hidden>
+    <span id="undoMsg"></span>
+    <button id="undoBtn" type="button">Undo</button>
+  </div>
+
+  <div class="note warn"><b>Unverified leads.</b> These are scraped from an ad-supported aggregator
+    that states it is not associated with government websites. Treat each as a prompt to check the
+    issuing body's own notification — never as grounds for paying a fee.</div>
+
+  <div class="note"><b>Where your choices are stored.</b> Accept and reject decisions live in this
+    browser's local storage, because the site is static and has no server. They will not appear on
+    another device, and clearing site data erases them.</div>
+
+</div>
+<script src="assets/triage.js"></script>
+<script>new Triage('inbox').start();</script>
+</body>
+</html>

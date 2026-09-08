@@ -45,6 +45,14 @@ header.mast{border-bottom:2px solid var(--ink);padding:36px 0 18px;margin-bottom
 .eyebrow b{color:var(--stamp)}
 h1{font-size:clamp(1.9rem,4.6vw,3rem);font-weight:700;line-height:1.06;letter-spacing:-.015em;margin:.3em 0 .2em}
 .standfirst{color:var(--ink-soft);max-width:62ch;margin:0;font-size:1.05rem}
+.topnav{display:flex;gap:3px;margin:14px 0 4px}
+.topnav a{padding:7px 14px;border:1px solid var(--rule);background:var(--surface-2);
+  color:var(--ink-soft);text-decoration:none;font-family:"IBM Plex Mono",monospace;
+  font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;border-radius:2px}
+.topnav a[aria-current="page"]{background:var(--ink);color:var(--paper);border-color:var(--ink);font-weight:600}
+.topnav a:hover:not([aria-current]){border-color:var(--stamp);color:var(--stamp)}
+.topnav .n{color:var(--stamp);font-weight:600}
+.topnav a[aria-current="page"] .n{color:var(--paper)}
 
 /* deadline strip */
 .strip{display:flex;flex-wrap:wrap;gap:2px;background:var(--rule);border:1px solid var(--rule);border-top:3px solid var(--stamp);margin:20px 0 26px}
@@ -189,6 +197,11 @@ footer{margin-top:56px;padding-top:18px;border-top:2px solid var(--ink);font-siz
     <span>For B.Tech CSE graduates · Rajasthan focus</span>
     <span><b id="openct">2 open now</b></span>
   </div>
+  <nav class="topnav">
+    <a href="index.html" aria-current="page">Atlas</a>
+    <a href="notifications.html">Notifications<span class="n" id="navInbox"></span></a>
+    <a href="applied.html">Applied<span class="n" id="navApplied"></span></a>
+  </nav>
   <h1>Exam Atlas for a CSE Graduate</h1>
   <p class="standfirst">Every route found, with vacancies, dates, paper pattern, syllabus, candidate volumes and which post lands at which rank. Search it, filter it, open any row.</p>
 </header>
@@ -1346,6 +1359,14 @@ strip(); chips(); render();
       const jobs=d.listings.filter(r=>r.is_job).length;
       metaEl.innerHTML=`Scraped from <b>sarkariresult.com.cm</b> · last run <b>${ago(d.fetched_at)}</b> · `
         +`${d.total_tracked} tracked, ${jobs} vacancies, <b>${d.new_today} new</b> this run · runs daily at 07:30`;
+      // badge the nav with how many postings are still awaiting a decision
+      let dec={};
+      try{ dec=JSON.parse(localStorage.getItem('govjob.decisions.v1'))||{}; }catch(_){}
+      const pending=d.listings.filter(r=>r.is_job && !dec[r.url]).length;
+      const applied=Object.values(dec).filter(x=>x.status==='applied').length;
+      const ni=document.getElementById('navInbox'), na=document.getElementById('navApplied');
+      if(ni) ni.textContent = pending?' '+pending:'';
+      if(na) na.textContent = applied?' '+applied:'';
       draw();
     })
     .catch(()=>{

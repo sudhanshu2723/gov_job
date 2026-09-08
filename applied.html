@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Applied · Exam Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/triage.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">Job triage · accepted postings</div>
+    <h1>Applied</h1>
+    <p class="standfirst">Everything you accepted from Notifications, newest first. Send one back to
+      the inbox if you change your mind.</p>
+    <nav class="tabs">
+      <a href="index.html">Atlas</a>
+      <a href="notifications.html">Inbox<span class="n" id="nInbox"></span></a>
+      <a href="applied.html" aria-current="page">Applied<span class="n" id="nApplied"></span></a>
+    </nav>
+  </header>
+
+  <div class="controls">
+    <span class="meta" id="meta"></span>
+  </div>
+
+  <p class="eyebrow" id="updated" style="margin-bottom:12px"></p>
+
+  <div class="list" id="list"></div>
+
+  <div class="note"><b>Accepting is a bookmark, not an application.</b> This list tracks what you
+    decided to pursue — you still have to apply on the issuing body's own portal, and the deadline
+    is theirs, not this page's.</div>
+
+  <div class="note"><b>Stored in this browser only.</b> The site is static, so decisions live in
+    local storage. They will not follow you to another device, and clearing site data erases them.</div>
+
+</div>
+<script src="assets/triage.js"></script>
+<script>new Triage('applied').start();</script>
+</body>
+</html>

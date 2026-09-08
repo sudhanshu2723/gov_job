@@ -1,0 +1,42 @@
+{
+  "name": "gov-job-atlas",
+  "version": "1.0.0",
+  "description": "A personal tracker of Indian government recruitment routes for a B.Tech CSE graduate, plus a daily scrape of new job listings.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "migrate": "node scripts/migrate.mjs",
+    "seed": "node scripts/seed.mjs",
+    "scrape": "node scripts/scrape.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudhanshu2723/gov_job.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/sudhanshu2723/gov_job/issues"
+  },
+  "homepage": "https://github.com/sudhanshu2723/gov_job#readme",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
+    "dotenv": "^17.4.2",
+    "next": "^16.3.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}

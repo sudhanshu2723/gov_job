@@ -1,6 +1,21 @@
+# ---- SECRETS — never commit ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
 # Personal documents — never publish these
 *.pdf
 application_form_*
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+next-env.d.ts
+.vercel/
+*.tsbuildinfo
 
 # Scraper run log: noisy, regenerated every run, causes merge conflicts in CI
 data/scrape.log

@@ -1,43 +1,81 @@
 # Exam Atlas
 
-A personal tracker of Indian government recruitment routes for a B.Tech CSE
-graduate, plus a daily scrape of new job listings.
+Government recruitment routes for a B.Tech CSE graduate, with a daily-scraped
+job inbox. Next.js + Neon Postgres.
 
-## What's here
+## Stack
 
-| Path | Purpose |
+| Piece | What |
 |---|---|
-| `index.html` | The site. 46 researched recruitment routes, filterable and sortable, plus a live listings panel. |
-| `scrape.py` | Daily scraper for sarkariresult.com.cm → `data/listings.json`. |
-| `data/listings.json` | Scraped listings, with `first_seen` tracking so new arrivals are flagged. |
-| `serve.py` | Local static server on :3000 that sends an explicit UTF-8 charset. |
-| `run-scrape.bat` | Wrapper for Windows Task Scheduler. |
-| `.github/workflows/scrape.yml` | Runs the scraper daily at 02:00 UTC (07:30 IST) and commits changes. |
+| Next.js 16 (App Router) | server-rendered pages, API routes |
+| Neon Postgres | 46 curated routes, scraped listings, triage decisions |
+| `@neondatabase/serverless` | HTTP driver — no connection pool to exhaust on serverless |
+| Vercel Cron | hits `/api/scrape` daily at 02:00 UTC (07:30 IST) |
 
-## Running locally
+## Pages
+
+- `/` — the atlas: 46 routes, filterable and sortable, with vacancies, pay,
+  paper pattern, syllabus and rank-to-post tables
+- `/notifications` — inbox of scraped postings, accept or reject each
+- `/applied` — everything accepted, with a way back to the inbox
+
+Accept/reject decisions live in Postgres, so they follow you across devices.
+
+## Setup
 
 ```bash
-python serve.py          # then open http://localhost:3000
-python scrape.py         # refresh listings by hand
+cp .env.example .env.local     # paste your Neon connection string
+npm install
+npm run migrate                # create the schema (safe to re-run)
+npm run seed                   # load the 46 routes + any existing listings
+npm run dev                    # http://localhost:3000
 ```
+
+## API
+
+| Route | Method | Purpose |
+|---|---|---|
+| `/api/listings` | GET | listings joined with their decision |
+| `/api/decisions` | POST | `{url, status:'applied'\|'rejected'}` |
+| `/api/decisions?url=…` | DELETE | undo — returns the posting to the inbox |
+| `/api/decisions?all=rejected` | DELETE | restore every rejected posting |
+| `/api/scrape` | GET/POST | run the scrape; guarded by `CRON_SECRET` |
+
+## Deploying to Vercel
+
+1. Import the repo at vercel.com
+2. Add environment variables:
+   - `DATABASE_URL` — the Neon string
+   - `CRON_SECRET` — any long random string; Vercel sends it as a bearer token
+     so the scrape endpoint is not publicly triggerable
+3. Deploy. `vercel.json` registers the daily cron automatically.
 
 ## On the data
 
-Two very different tiers of confidence live in this page, and they are kept
-visually separate:
+Two tiers of confidence, kept visually separate:
 
-- **Researched rows** carry a source mark — ◆ read from an official site or
+- **Curated routes** carry a source mark — ◆ read from an official site or
   notification PDF, ◇ corroborated across independent sources, ○ single
-  source or background knowledge. 30 of the 46 routes were actually verified;
-  the other 16 are catalogued but explicitly marked *Not researched*.
-- **Live listings** are scraped from an unofficial, ad-supported aggregator
-  that states on its own pages that it is not associated with government
-  websites. They are leads to check against the issuing body's own
-  notification — never a basis for paying an application fee.
+  source or background knowledge. 30 of 46 were actually verified; the other
+  16 are catalogued but marked *Not researched*.
+- **Scraped listings** come from an unofficial ad-supported aggregator that
+  states it is not associated with government websites. They are leads to
+  check against the issuing body's own notification — never grounds for
+  paying a fee.
 
-Vacancy figures marked `°` are from a past cycle with no live advertisement.
-Pay figures are **basic** (the 7th CPC entry cell for that level), never gross
-or in-hand.
+Vacancies marked `°` are from a past cycle. Pay figures are **basic** (the
+7th CPC entry cell), never gross or in-hand. A notification PDF always
+overrides anything here.
 
-Dates move and corrigenda get issued. A notification PDF always overrides
-anything here.
+## Legacy
+
+`index.html`, `notifications.html`, `applied.html`, `assets/` and `scrape.py`
+are the previous static version, still served by GitHub Pages. `scripts/seed.mjs`
+reads the route data out of `index.html`, so do not delete it before moving
+that data elsewhere. The GitHub Actions workflow still runs the Python
+scraper — see the note in the deployment section about picking one pipeline.
+
+## Security
+
+`.env*` is gitignored. Never commit the connection string; rotate it in the
+Neon console if it is ever exposed.
