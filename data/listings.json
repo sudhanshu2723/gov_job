@@ -1,12 +1,40 @@
 {
  "source": "https://sarkariresult.com.cm/",
  "source_note": "Unofficial aggregator; self-declared as not associated with government websites. Treat every row as an unverified lead.",
- "fetched_at": "2026-11-19T09:52:51",
+ "fetched_at": "2026-11-20T09:40:03",
  "scraped_today": 143,
- "new_today": 5,
- "total_tracked": 428,
- "runs": 72,
+ "new_today": 2,
+ "total_tracked": 430,
+ "runs": 73,
  "listings": [
+  {
+   "title": "UPPSC Civil Judge PCS J Online Form 2026",
+   "url": "https://sarkariresult.com.cm/uppsc-civil-judge-pcs-j-2026/",
+   "sections": [
+    "Latest Jobs"
+   ],
+   "vacancies": null,
+   "tags": [
+    "graduate"
+   ],
+   "sub_graduate": false,
+   "is_job": true,
+   "first_seen": "2026-11-20",
+   "last_seen": "2026-11-20"
+  },
+  {
+   "title": "UP Sant Kabir Nagar ECCE Educator Online Form 2026",
+   "url": "https://sarkariresult.com.cm/up-sant-kabir-nagar-ecce-educator-2026/",
+   "sections": [
+    "Outsourcing Jobs"
+   ],
+   "vacancies": null,
+   "tags": [],
+   "sub_graduate": false,
+   "is_job": true,
+   "first_seen": "2026-11-20",
+   "last_seen": "2026-11-20"
+  },
   {
    "title": "UPSSSC Vidhan Bhawan Guard / Fire Guard Eligibility Result 2026",
    "url": "https://sarkariresult.com.cm/upsssc-vidhan-bhawan-guard-fire-guard-2026/",
@@ -18,7 +46,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-19",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSSSC Auditor / Assistant Accountant Eligibility Result 2026",
@@ -33,7 +61,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-19",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "NTPC NGEL Engineer and Executive Post Admit Card 2026",
@@ -49,7 +77,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-19",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPTET Exam 2027 Online Form",
@@ -62,7 +90,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-19",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Haryana HTET Online Form 2026",
@@ -75,10 +103,10 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-19",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
-   "title": "RSSB CET 12th Level Exam Date 2026",
+   "title": "RSSB CET 12th Level Exam City / Admit Card Date 2026",
    "url": "https://sarkariresult.com.cm/rssb-cet-12th-level-2026/",
    "sections": [
     "Admit Cards"
@@ -90,7 +118,7 @@
    "sub_graduate": true,
    "is_job": false,
    "first_seen": "2026-11-18",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UKSSSC Constable Various Post Online Form 2026",
@@ -103,7 +131,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-18",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSC 13/2026 Various Posts Online Form 2026",
@@ -116,7 +144,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-17",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "ASRB ICAR Technical Assistant Online Form 2026",
@@ -132,7 +160,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-17",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Exim Bank Management Trainee, Manager Online Form 2026",
@@ -147,7 +175,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-14",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "RSSB Teaching Associate Admit card 2026",
@@ -191,7 +219,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-13",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "PNB Bank LBO Result 2026",
@@ -206,7 +234,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "DRDO CEPTAM-11 Final Result 2026",
@@ -219,7 +247,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "CISCE ICSE Board Class 10th & 12th Date Sheet 2027",
@@ -247,7 +275,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Railway RRC NR Apprentice Online Form 2026 (4651 Posts)",
@@ -262,7 +290,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-07",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "BPSC 71th DV Schedule 2026",
@@ -275,7 +303,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-07",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "CBSE Board Class 10th & 12th Date Sheet 2027",
@@ -291,17 +319,17 @@
    "last_seen": "2026-11-15"
   },
   {
-   "title": "Allahabad HC Private Secretary Gr-I Admit Card 2026",
+   "title": "Allahabad HC Private Secretary Gr-I Answer Key 2026",
    "url": "https://sarkariresult.com.cm/allahabad-hc-private-secretary-gr-i-2026/",
    "sections": [
-    "Admit Cards"
+    "Answer Key"
    ],
    "vacancies": null,
    "tags": [],
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-07",
-   "last_seen": "2026-11-18"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UKPSC Lower PCS Online Form 2026",
@@ -316,7 +344,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-07",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "DSSSB MTS & JE Online Form 2026",
@@ -332,7 +360,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-07",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Bulandshahar ECCE Educator Online Form 2026",
@@ -345,7 +373,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-07",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSC NDA / NA-I Final Result With Marks 2026",
@@ -358,7 +386,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-06",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "ISRO SDSC SHAR Apprentice Online Form 2026",
@@ -399,7 +427,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-05",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "BPSC District Sports Officer DSO Result 2026",
@@ -414,7 +442,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-05",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "RSSB Female Supervisor Result 2026",
@@ -429,7 +457,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-05",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "RBI Bank Office Attendant Cutoff / Score Card 2026 – Out",
@@ -444,7 +472,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-05",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPPSC Various Posts Online Form 2026",
@@ -491,7 +519,6 @@
    "title": "SSC Constable GD 2025 Final Answer Key 2026 – Out",
    "url": "https://sarkariresult.com.cm/ssc-constable-gd-2025/",
    "sections": [
-    "Results",
     "Answer Key"
    ],
    "vacancies": null,
@@ -499,7 +526,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-04",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Bihar Vidhan Sabha Junior Secretariat Assistant JSA Online Form 2026",
@@ -529,7 +556,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-04",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "NTA AISSEE 2027 Online Form",
@@ -542,7 +569,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-04",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Indian Bank Specialist Officer SO Result 2026",
@@ -588,7 +615,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-03",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Semi Conductor SCL Various Post Online Form 2026",
@@ -604,7 +631,7 @@
    "last_seen": "2026-11-06"
   },
   {
-   "title": "ONGC Apprentice Online Form 2026",
+   "title": "ONGC Apprentice Online Form 2026 – Last Date Today",
    "url": "https://sarkariresult.com.cm/ongc-apprentice-2026/",
    "sections": [
     "Latest Jobs"
@@ -614,7 +641,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-11-03",
-   "last_seen": "2026-11-06"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "AEES Teaching Various Post Online Form 2026",
@@ -640,7 +667,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-01",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPDELED 2024 Online Counseling",
@@ -653,7 +680,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-11-01",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "BPSC AES Result 2026 – Out",
@@ -751,7 +778,7 @@
    "last_seen": "2026-11-10"
   },
   {
-   "title": "SSC CPO SI 2025 Paper-II Exam City Details – Out",
+   "title": "SSC CPO SI 2025 Paper-II Exam City Details",
    "url": "https://sarkariresult.com.cm/ssc-cpo-si-paper-i-2025/",
    "sections": [
     "Admit Cards"
@@ -761,7 +788,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-30",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Meerut ECCE Educator Online Form 2026",
@@ -774,7 +801,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-30",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Kasganj ECCE Educator Online Form 2026",
@@ -787,7 +814,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-30",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Kushinagar ECCE Educator Online Form 2026",
@@ -800,7 +827,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-30",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "NVS Class 6 Admit Card 2026",
@@ -867,7 +894,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-28",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "CISF Constable Driver Exam City Details 2026",
@@ -882,7 +909,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-28",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "CISF Constable Tradesmen Exam City Details 2026",
@@ -897,7 +924,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-28",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPPSC RO / ARO Online Form 2026",
@@ -911,10 +938,10 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-27",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
-   "title": "ISRO URSC Various Post Online Form 2026 – Date Extend",
+   "title": "ISRO URSC Various Post Online Form 2026 – Last Date Today",
    "url": "https://sarkariresult.com.cm/isro-ursc-various-post-2026/",
    "sections": [
     "Latest Jobs"
@@ -924,7 +951,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-27",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Bank of Baroda SO Admit Card 2026",
@@ -946,14 +973,15 @@
    "title": "NTA JEE Mains Session I Online Form 2027",
    "url": "https://sarkariresult.com.cm/nta-jee-mains-session-i-2027/",
    "sections": [
+    "Latest Jobs",
     "Admission"
    ],
    "vacancies": null,
    "tags": [],
    "sub_graduate": false,
-   "is_job": false,
+   "is_job": true,
    "first_seen": "2026-10-25",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPPSC RO / ARO Online Form 2026",
@@ -995,7 +1023,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-25",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Hamirpur ECCE Educator Online Form 2026",
@@ -1008,7 +1036,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-25",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Budaun ECCE Educator Online Form 2026",
@@ -1021,7 +1049,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-25",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Fatehpur ECCE Educator Online Form 2026",
@@ -1034,7 +1062,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-25",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Kanpur ECCE Educator Online Form 2026",
@@ -1047,7 +1075,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-25",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Rampur ECCE Educator Online Form 2026",
@@ -1060,7 +1088,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-25",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPESSC UP TGT Online Form 2026 (17,735 Posts)",
@@ -1074,7 +1102,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-24",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPPSC Lecturer 2023 Exam City Details",
@@ -1129,7 +1157,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-22",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "MPPSC ADPO Admit Card 2026",
@@ -1212,7 +1240,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-20",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "CWC Assistant Manager & Junior Executive Online Form 2026 – Last Date Today",
@@ -1300,7 +1328,7 @@
    "sub_graduate": true,
    "is_job": true,
    "first_seen": "2026-10-17",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "NTA NIFTEE Online Form 2027 – Date Extended",
@@ -1313,7 +1341,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-17",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Hapur ECCE Educator Online Form 2026",
@@ -1326,7 +1354,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-17",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Jhansi ECCE Educator Online Form 2026",
@@ -1339,7 +1367,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-17",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Mathura ECCE Educator Online Form 2026",
@@ -1352,7 +1380,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-17",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "IBPS SO XVI Mains Admit Card 2026",
@@ -1440,7 +1468,7 @@
    "last_seen": "2026-11-03"
   },
   {
-   "title": "UPSSSC Moharir 2022 Mains Exam Fee Payment",
+   "title": "UPSSSC Moharir 2022 Exam City Details",
    "url": "https://sarkariresult.com.cm/upsssc-moharir-2022/",
    "sections": [
     "Admit Cards"
@@ -1450,7 +1478,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-14",
-   "last_seen": "2026-11-18"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "WCL Mining Sirdar & Assistant Foreman Admit Card 2026",
@@ -1510,7 +1538,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-13",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "SSC GD Constable Revised Result 2026 – Out",
@@ -1526,7 +1554,7 @@
    "last_seen": "2026-11-05"
   },
   {
-   "title": "UPSSSC Cane Supervisor Mains Exam Fee Payment 2026",
+   "title": "UPSSSC Cane Supervisor Exam City Details 2026",
    "url": "https://sarkariresult.com.cm/upsssc-cane-supervisor-2026/",
    "sections": [
     "Admit Cards"
@@ -1536,7 +1564,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-13",
-   "last_seen": "2026-11-18"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Board Class 10th & 12th Time Table 2027",
@@ -1567,7 +1595,7 @@
    "last_seen": "2026-10-26"
   },
   {
-   "title": "Bihar BPSC 72 Pre Exam 2026 – Postponed",
+   "title": "Bihar BPSC 72 Pre New Exam Date 2026",
    "url": "https://sarkariresult.com.cm/bpsc-72nd-pre-2026/",
    "sections": [
     "Admit Cards"
@@ -1577,7 +1605,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-13",
-   "last_seen": "2026-10-23"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSSSC Junior Engineer JE (Electrical) Online Form 2026",
@@ -1592,7 +1620,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-13",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "DSSSB Sweeper & Chowkidar Online Form 2026",
@@ -1618,7 +1646,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-10",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "ONGC Geologists and Engineers E1 Result 2026",
@@ -1700,7 +1728,7 @@
    "sub_graduate": true,
    "is_job": false,
    "first_seen": "2026-10-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "SKAU Kurukshetra Non Teaching Post Admit Card 2026",
@@ -1726,7 +1754,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Mathura ECCE Educator Online Form 2026",
@@ -1752,7 +1780,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Ayodhya ECCE Educator Online Form 2026",
@@ -1970,7 +1998,6 @@
    "title": "Railway RRC NWR Apprentice Online Form 2026",
    "url": "https://sarkariresult.com.cm/rrc-nwr-apprentice-2026/",
    "sections": [
-    "Latest Jobs",
     "10th/ITI Jobs"
    ],
    "vacancies": null,
@@ -1980,7 +2007,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-10-02",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSSSC Regional Youth Welfare Officer Online Form 2026 – Last Date Today",
@@ -2049,7 +2076,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-01",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSSSC Havildar Instructor Admit Card 2026",
@@ -2062,7 +2089,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-01",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSSSC Enforcement Constable 2023 Final Result",
@@ -2101,7 +2128,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-10-01",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "JSSC Para Teacher JTAACCE Online form 2026 (7299 Posts) – Last Date Today",
@@ -2182,7 +2209,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-30",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Rajasthan B.Ed. 2025 Online Form",
@@ -2197,7 +2224,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-30",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Canara Bank Apprentice Online Form 2026 (3500 Posts) – Last Date Today",
@@ -2275,7 +2302,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-09-29",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "ITBP Head Constable (Education & Stress Counsellor) Online Form 2026 – Last Date Today",
@@ -2355,7 +2382,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-26",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UKPSC Lecturer Admit Card 2026",
@@ -2411,7 +2438,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-26",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Bareilly ECCE Educator Online Form 2026",
@@ -2510,7 +2537,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-24",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "IBPS Hindi Officer Online Form 2026 – Last Date Today",
@@ -2543,7 +2570,7 @@
    "sub_graduate": true,
    "is_job": true,
    "first_seen": "2026-09-23",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "ISRO ISTRAC Various Post Admit Card 2026",
@@ -2597,7 +2624,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-23",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "RRB ALP CEN 01/2026 Answer Key 2026 – Out",
@@ -2613,7 +2640,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-22",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "NTPC NSPCL Various Post Online Form 2026 – Last Date Today",
@@ -2670,7 +2697,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-09-22",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "MECL Non-Executive Online Form 2026 – Last Date Today",
@@ -2826,7 +2853,7 @@
    "sub_graduate": true,
    "is_job": true,
    "first_seen": "2026-09-19",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "MPESB Subedar Steno, ASI Admit Card 2026",
@@ -2911,7 +2938,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-18",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "SSC Delhi Police HC (Ministerial) PE & MT Admit Card 2026",
@@ -3084,7 +3111,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-09-17",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPESSC PRT Assistant Teacher Re-Open Form 2026 (12405 Posts)",
@@ -3189,7 +3216,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-16",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Urgent Hiring In Sarkari Result – Apply Now",
@@ -3302,7 +3329,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-09-14",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "MP High Court Assistant Grade III Admit Card 2026 – Out",
@@ -3317,7 +3344,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-14",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "SSC CGL Tier-I Answer Key 2026 – Out",
@@ -3333,7 +3360,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-13",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSSSC Teacher Cadre JTC Final Answer Key 2026",
@@ -3565,7 +3592,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-12",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Uttarakhand TET Result 2026 – Out",
@@ -3578,7 +3605,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-12",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSSSC Senior Instructor Online Form 2026 – Last Date Today",
@@ -3617,7 +3644,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-12",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Mathura PVT Online Form 2025 – Date Extend",
@@ -3747,10 +3774,10 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-11",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
-   "title": "SSC CPO SI CAPF Paper-I Exam City Details 2026",
+   "title": "SSC CPO SI CAPF Paper-I Admit Card 2026",
    "url": "https://sarkariresult.com.cm/2026-ssc-cpo-si-sep26/",
    "sections": [
     "Admit Cards"
@@ -3762,7 +3789,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-11",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UKPSC Upper PCS Pre Admit Card 2026",
@@ -3790,7 +3817,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-11",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "MPESB MP Police Constable Online Form 2026 (7500 Posts)",
@@ -3804,7 +3831,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-09-10",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPPSC ATP Mains Exam City Details 2026",
@@ -3890,10 +3917,10 @@
    "last_seen": "2026-10-19"
   },
   {
-   "title": "Bank of India BOI SO Online Form 2026 – Last Date Today",
+   "title": "Bank of India BOI SO Admit Card 2026",
    "url": "https://sarkariresult.com.cm/boi-so-2026/",
    "sections": [
-    "Latest Jobs"
+    "Admit Cards"
    ],
    "vacancies": null,
    "tags": [
@@ -3901,9 +3928,9 @@
     "graduate"
    ],
    "sub_graduate": false,
-   "is_job": true,
+   "is_job": false,
    "first_seen": "2026-09-10",
-   "last_seen": "2026-10-05"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "RCFL Management Trainee MT Online Form 2026 – Last Date Today",
@@ -3959,7 +3986,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-10",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "BSF CAPF HC (Ministerial) Answer Key 2026 – Out",
@@ -4018,7 +4045,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-09",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "CONCOR MT, Assistant Officer Exam Date 2026",
@@ -4046,7 +4073,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "RRC SR Apprentice Online Form 2026 (4471 Posts)",
@@ -4059,7 +4086,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "SSC CHSL 10+2 Online Form 2026 (2536 Posts)",
@@ -4073,7 +4100,7 @@
    "sub_graduate": true,
    "is_job": true,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "RRVUNL JE / Other Post Form (2005 Posts)",
@@ -4137,7 +4164,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "India Post GDS 1st Merit List 2026",
@@ -4167,7 +4194,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSC CAPF AC PET / PST Admit Card 2026",
@@ -4197,7 +4224,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPTET 2026 Certificate Correction",
@@ -4295,7 +4322,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSC CMS Result 2026 – Out",
@@ -4336,7 +4363,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "NCERT LDC Post Result 2026 – Out",
@@ -4596,7 +4623,7 @@
    "sub_graduate": true,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Home Guard Final Marks 2026 – Out",
@@ -4625,7 +4652,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "SSC Stenographer Answer Key 2026 – Out",
@@ -4738,7 +4765,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSC NDA II Result (Name Wise) 2026 – Out",
@@ -4875,7 +4902,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSSSC PET Answer Key Objection 2026",
@@ -4889,7 +4916,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "BPSSC Bihar Police Company Commander Online Form 2026 – Last Date Today",
@@ -4905,7 +4932,7 @@
    "last_seen": "2026-10-10"
   },
   {
-   "title": "RRB Paramedical Staff Admit Card 2026 – Out",
+   "title": "RRB Paramedical Staff Admit Card 2026",
    "url": "https://sarkariresult.com.cm/rrb-paramedical-staff-05-2026/",
    "sections": [
     "Admit Cards"
@@ -4917,7 +4944,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "GIMS Noida Staff Nurse Online Form 2026 – Last Date Today",
@@ -4958,7 +4985,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "ITBP CAPF Medical Officer Online Form 2026 – Last Date Today",
@@ -5013,7 +5040,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "RCFL Apprentices Online Form 2026 – Last Date Today",
@@ -5039,7 +5066,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "MPESB Primary and Secondary Teachers MSPSTET Online Form 2026 – Last Date Today",
@@ -5078,13 +5105,14 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
-   "title": "SSC Junior Engineer JE Admit Card 2026",
+   "title": "SSC Junior Engineer JE Answer Key 2026 – Out",
    "url": "https://sarkariresult.com.cm/ssc-je-2026/",
    "sections": [
-    "Admit Cards"
+    "Results",
+    "Answer Key"
    ],
    "vacancies": null,
    "tags": [
@@ -5093,7 +5121,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-12"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Anganwadi Bharti Online Form 2026 (Updated)",
@@ -5106,7 +5134,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "RPSC Statistical Officer Answer Key 2026 – Out",
@@ -5193,7 +5221,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSSSC BCG Technician Result 2026 – Out",
@@ -5206,7 +5234,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSSSC UP Pollution Control Board Various Post Final Answer Key 2026 – Out",
@@ -5235,17 +5263,17 @@
    "last_seen": "2026-09-16"
   },
   {
-   "title": "Bihar BPSC APO Final Answer Key 2026",
+   "title": "Bihar BPSC APO Result 2026",
    "url": "https://sarkariresult.com.cm/bpsc-apo-2026/",
    "sections": [
-    "Answer Key"
+    "Results"
    ],
    "vacancies": null,
    "tags": [],
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSSSC Agriculture Technical Assistant Group-C Answer Key 2026 – Out",
@@ -5304,7 +5332,7 @@
    "sub_graduate": true,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "NIELIT CCC Online Form, Admit Card, Result 2026",
@@ -5318,7 +5346,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Aadhar Card Download, Correction, Status 2026",
@@ -5331,7 +5359,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "PAN Card Registration, Correction & Other Service 2026",
@@ -5344,7 +5372,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Income, Cast, Residential Certificate Online Verification 2026",
@@ -5357,7 +5385,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Bihar Income, Cast, Residential Certificate Online Apply & Verification 2026",
@@ -5370,7 +5398,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Voter ID Registration & Other Voter Service 2026",
@@ -5383,7 +5411,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Bihar Dakhil Kharij, Registration Online 2026",
@@ -5396,7 +5424,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Dakhil Kharij, Registration Online 2026",
@@ -5409,7 +5437,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Delhi Laxmi Yojana Form 2026",
@@ -5422,7 +5450,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Scholarship Online Form 2026-27",
@@ -5435,7 +5463,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Police OTR Registration 2025",
@@ -5448,7 +5476,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Allahabad University PHd Online Form 2026",
@@ -5513,7 +5541,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "IIT JAM 2027 Online Form",
@@ -5591,7 +5619,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "BCECE Mop-Up Revised Counselling Schedule 2025",
@@ -5604,7 +5632,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Bihar ITI CAT Offline Mop-Up Counselling 2025",
@@ -5617,7 +5645,7 @@
    "sub_graduate": true,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Railway ICF Apprentice Online Form 2026",
@@ -5658,7 +5686,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "Odisha Anganwadi Bharti Online Form 2026",
@@ -5686,7 +5714,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "RRC ECOR Apprentice Online Form 2026",
@@ -5727,7 +5755,7 @@
    "sub_graduate": false,
    "is_job": true,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UP Mirzapur ECCE Educator Online Form 2026",
@@ -5939,7 +5967,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "ISRO ICRB Scientist / Engineer Answer Key 2026",
@@ -5954,7 +5982,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   },
   {
    "title": "UPSC EPFO / APFC Online Form 2026",
@@ -5967,7 +5995,7 @@
    "sub_graduate": false,
    "is_job": false,
    "first_seen": "2026-09-08",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-20"
   }
  ]
 }
